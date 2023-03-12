@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_12_113849) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_12_181144) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "shops", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "phone"
+    t.string "email"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "twitter"
+    t.string "monday_opening"
+    t.string "tuesday_opening"
+    t.string "wednesday_opening"
+    t.string "thursday_opening"
+    t.string "friday_opening"
+    t.string "saturday_opening"
+    t.string "sunday_opening"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_12_113849) do
     t.datetime "updated_at", null: false
     t.string "address"
     t.string "phone"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

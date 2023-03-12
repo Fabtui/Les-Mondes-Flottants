@@ -37,7 +37,7 @@
     <li><%= link_to 'Boutique', "#", class:'link-line' %></li>
   <% end %>
     <% if user_signed_in? %>
-      <li><%= link_to 'Messages', contacts_path, class:"link-line" %></li>
+      <li><%= link_to 'Messages', '#', class:"link-line" %></li>
       <li><%= link_to 'Admin', "#", class:"link-line" %></li>
     <% else %>
       <% unless controller_name == 'contacts' && action_name == 'new' %>
