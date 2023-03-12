@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_12_181144) do
     t.string "facebook"
     t.string "instagram"
     t.string "twitter"
+    t.string "global_opening"
     t.string "monday_opening"
     t.string "tuesday_opening"
     t.string "wednesday_opening"

@@ -25,6 +25,7 @@ shop = Shop.create(
   facebook: '#',
   instagram: '#',
   twitter: '#',
+  global_opening: 'Lundi au samedi, 9h-12h | 14h18h',
   monday_opening: 'Fermé',
   tuesday_opening: '9h-12h 14h18h',
   wednesday_opening: '9h-12h 14h18h',
