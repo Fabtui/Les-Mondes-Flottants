@@ -4,7 +4,10 @@
 
 .sign-in-link {
   position: absolute;
-
+  button {
+      background: transparent;
+      border: none;
+    }
   i {
     font-size: 24px;
     color: rgba(205, 205, 205, 0.8);

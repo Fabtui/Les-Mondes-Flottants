@@ -10,7 +10,7 @@
 <nav class="nav-container" id="navigation">
   <div class="sign-in-link">
       <% if user_signed_in? %>
-        <%= link_to destroy_user_session_path, method: :delete do %>
+        <%= button_to destroy_user_session_path, method: :delete do %>
           <i class="fas fa-sign-out-alt"></i>
         <% end %>
       <% else %>
@@ -38,7 +38,7 @@
   <% end %>
     <% if user_signed_in? %>
       <li><%= link_to 'Messages', '#', class:"link-line" %></li>
-      <li><%= link_to 'Admin', "#", class:"link-line" %></li>
+      <li><%= link_to 'Admin', "/admin", class:"link-line" %></li>
     <% else %>
       <% unless controller_name == 'contacts' && action_name == 'new' %>
         <li><%= link_to 'Contact', '#', class:'link-line' %></li>
