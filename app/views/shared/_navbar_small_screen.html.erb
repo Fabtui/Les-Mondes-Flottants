@@ -1,6 +1,8 @@
 <div id="navbar-small-screen">
   <div class="home-logo">
-    <%= image_tag("logo.png", id:"home-logo-button") %>
+    <%= link_to "/" do %>
+      <%= image_tag("logo.png", id:"home-logo-button") %>
+    <% end %>
   </div>
 
   <a href="#navigation" class="nav-trigger">
