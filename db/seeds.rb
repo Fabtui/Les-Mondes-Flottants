@@ -36,3 +36,15 @@ shop = Shop.create(
 )
 
 puts "#{Shop.count} shop created"
+
+# --------------------------------ARTIST------------------------------------
+
+Artist.destroy_all
+puts "Artist cleaned"
+
+artist1 = Artist.create(
+  name: 'Odahil',
+  description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium voluptatem eum officiis perspiciatis quae vel. Officia eveniet corrupti aliquid libero, expedita reprehenderit at? Qui alias architecto fuga voluptatibus suscipit magnam!',
+)
+
+puts "#{Artist.count} artist created"

@@ -1,11 +1,21 @@
 <div id="navbar-large-screen">
   <div class="home-logo">
-    <%= image_tag("logo.png", id:"home-logo-button") %>
+    <%= link_to "/" do %>
+      <%= image_tag("logo.png", id:"home-logo-button") %>
+    <% end %>
   </div>
 
   <nav class="navbar_large-container">
-    <div class="navbar_large_screen_item <%= "item_active" if controller_name == "tattoos" && action_name == "index" %>">
+
+    <div class="navbar_large_screen_item artist-link <%= "item_active" if controller_name == "artists" && action_name == 'show' %>">
       <h5><%= link_to 'Artistes', "#" %></h5>
+      <div class="artist-dropdown">
+        <ul>
+          <% Artist.all.each do |artist| %>
+            <li><%= link_to artist.name, artist_path(artist.id) %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'pages' && action_name == 'shop' %>">
       <h5><%= link_to 'Shop', '#' %></h5>
