@@ -17,6 +17,10 @@
   .sign-in-link {
     width: 50px;
     position: initial;
+    button {
+      background: transparent;
+      border: none;
+    }
   }
 }
 

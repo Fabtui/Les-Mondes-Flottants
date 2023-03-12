@@ -18,7 +18,7 @@
       <h5><%= link_to 'Messages', "#" %></h5>
     </div>
     <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'pages' && action_name == 'dashboard' %>">
-      <h5><%= link_to 'Admin', '#' %></h5>
+      <h5><%= link_to 'Admin', '/admin' %></h5>
     </div>
     <% else %>
       <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'contacts' && action_name == 'new' %>">
@@ -38,7 +38,7 @@
 
   <div class="sign-in-link">
     <% if user_signed_in? %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
+      <%= button_to destroy_user_session_path, method: :delete do %>
         <i class="fas fa-sign-out-alt"></i>
       <% end %>
     <% else %>
