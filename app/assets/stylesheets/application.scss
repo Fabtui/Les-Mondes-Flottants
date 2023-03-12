@@ -10,3 +10,36 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-color: $black;
+  color: $white;
+  font-weight: 300;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  min-height: calc(100vh - 160px);
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  border-top: none;
+}

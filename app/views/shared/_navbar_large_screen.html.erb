@@ -1,0 +1,51 @@
+<div id="navbar-large-screen">
+  <div class="home-logo">
+    <%= image_tag("logo.png", id:"home-logo-button") %>
+  </div>
+
+  <nav class="navbar_large-container">
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == "tattoos" && action_name == "index" %>">
+      <h5><%= link_to 'Artistes', "#" %></h5>
+    </div>
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'pages' && action_name == 'shop' %>">
+      <h5><%= link_to 'Shop', '#' %></h5>
+    </div>
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'articles' && action_name == 'index' %>">
+      <h5><%= link_to 'Boutique', '#' %></h5>
+    </div>
+    <% if user_signed_in? %>
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'contacts' && action_name == 'index' %>">
+      <h5><%= link_to 'Messages', "#" %></h5>
+    </div>
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'pages' && action_name == 'dashboard' %>">
+      <h5><%= link_to 'Admin', '#' %></h5>
+    </div>
+    <% else %>
+      <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'contacts' && action_name == 'new' %>">
+        <h5><%= link_to 'Contact', "#" %></h5>
+      </div>
+    <% end %>
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'cart' && action_name == 'index' %> cart_navbar_item">
+      <h5>
+        <%= link_to "#" do %>
+          <i class="fa fa-shopping-cart"></i>
+        <% end %>
+      </h5>
+      <span><%= session[:cart] ? session[:cart].count : "" %></span>
+    </div>
+    </ul>
+  </nav>
+
+  <div class="sign-in-link">
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fas fa-sign-out-alt"></i>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path do %>
+        <i class="fas fa-sign-in-alt"></i>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

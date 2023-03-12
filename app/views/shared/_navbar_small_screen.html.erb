@@ -1,0 +1,51 @@
+<div id="navbar-small-screen">
+  <div class="home-logo">
+    <%= image_tag("logo.png", id:"home-logo-button") %>
+  </div>
+
+  <a href="#navigation" class="nav-trigger">
+    <span></span>
+  </a>
+
+<nav class="nav-container" id="navigation">
+  <div class="sign-in-link">
+      <% if user_signed_in? %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fas fa-sign-out-alt"></i>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_session_path do %>
+          <i class="fas fa-sign-in-alt"></i>
+        <% end %>
+      <% end %>
+    </div>
+
+  <ul class="nav">
+  <% unless controller_name == 'pages' && action_name == 'home' %>
+    <li><%= link_to 'Accueil', root_path, class:'link-line' %></li>
+  <% end %>
+  <% unless controller_name == 'tattoos' && action_name == 'index' %>
+    <li><%= link_to 'Gallerie', '#', class:'link-line' %></li>
+  <% end %>
+  <% unless controller_name == 'arts' && action_name == 'index' %>
+    <li><%= link_to 'Artworks', '#', class:'link-line' %></li>
+  <% end %>
+  <% unless controller_name == 'pages' && action_name == 'shop' %>
+    <li><%= link_to 'Shop', '#', class:'link-line' %></li>
+  <% end %>
+  <% unless controller_name == 'articles' && action_name == 'index' %>
+    <li><%= link_to 'Boutique', "#", class:'link-line' %></li>
+  <% end %>
+    <% if user_signed_in? %>
+      <li><%= link_to 'Messages', contacts_path, class:"link-line" %></li>
+      <li><%= link_to 'Admin', "#", class:"link-line" %></li>
+    <% else %>
+      <% unless controller_name == 'contacts' && action_name == 'new' %>
+        <li><%= link_to 'Contact', '#', class:'link-line' %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</nav>
+
+<div class="overlay"></div> <!-- improve main element 3d movement -->
+</div>
