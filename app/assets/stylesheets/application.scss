@@ -10,6 +10,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "devise/index";
 
 body {
   background-color: $black;
@@ -20,6 +21,11 @@ body {
   overflow-x: hidden;
   position: relative;
   scroll-behavior: smooth;
+}
+
+.main-container {
+  padding-top: 105px;
+  min-height: calc(100vh - 100px);
 }
 
 *,

@@ -1,0 +1,72 @@
+.devise-container {
+  // height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 44px;
+  color: $white;
+
+  h1 {
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+}
+
+.devise-content {
+  background-color: rgb(22, 22, 22);
+  padding: 40px 60px;
+  border-radius: 10px;
+  // min-width: 40vw;
+  box-shadow: 4px 4px 15px 6px black;
+}
+
+.form-input-content {
+  display: flex;
+  justify-content: center;
+  // padding: 12px 0;
+}
+
+.form-input-content-i {
+  background-color: black;
+  height: 37px;
+  width: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px 0 0 2px;
+  border-bottom: 1px solid white;
+}
+
+#user_email,
+#user_address,
+#user_phone,
+#user_password,
+#user_password_confirmation {
+  background-color: rgb(0, 0, 0) !important;
+  border: none !important;
+  border-bottom: 1px solid white !important;
+  padding-left: 0 !important;
+  min-width: 30vw;
+  &:focus {
+    background-color: rgb(0, 0, 0) !important;
+    border: none !important;
+    border-bottom: 1px solid white !important;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .devise-container {
+    padding-top: 30%;
+  }
+}
