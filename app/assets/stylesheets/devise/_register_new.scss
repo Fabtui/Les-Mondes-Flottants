@@ -65,8 +65,11 @@
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   .devise-container {
     padding-top: 30%;
+  }
+  .devise-content {
+    padding: 40px 0;
   }
 }
