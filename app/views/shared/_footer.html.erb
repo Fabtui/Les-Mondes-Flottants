@@ -10,10 +10,10 @@
 
       <div class="footer-center-element">
         <div class="social-links">
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-instagram"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          <a href=<%= Shop.first.facebook %>><i class="fa fa-facebook"></i></a>
+          <a href=<%= Shop.first.instagram %>><i class="fa fa-instagram"></i></a>
+          <a href=<%= Shop.first.twitter %>><i class="fa fa-twitter"></i></a>
+          <%# <a href="#"><i class="fa fa-linkedin-square"></i></a> %>
         </div>
 
         <div class="row">
@@ -32,9 +32,10 @@
 
       <div class="footer-right-element">
         <div class="address-links">
-          <li class="address1"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.fr/maps/place/166+Rue+Vend%C3%B4me,+69003+Lyon/" target="_blank">166 Rue Vendome, 69003 Lyon</a></li>
-          <li><a href="tel:+05890000111"><i class="fa-solid fa-phone"></i> +91 90904500112</a></li>
-          <li><a href="mailto:name@email.com"><i class="fa-solid fa-envelope"></i> mail@1234567.com</a></li>
+          <li class="address1"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.fr/maps/place/166+Rue+Vend%C3%B4me,+69003+Lyon/" target="_blank"> <%= Shop.first.address %></a></li>
+          <li><i class="fa fa-clock-o"></i></i> <%= Shop.first.global_opening %></li>
+          <li><a href="tel:<%= Shop.first.phone %>"><i class="fa-solid fa-phone"></i> <%= Shop.first.phone %></a></li>
+          <li><a href="mailto:<%= Shop.first.email %>"><i class="fa-solid fa-envelope"></i> <%= Shop.first.email %>/a></li>
         </div>
       </div>
 
@@ -42,7 +43,7 @@
 
     <div class="footer-down-section">
       <div class="row footer-caption">
-        <p>Les Mondes Flottants © 2023 - All rights reserved || Designed By: <a href="www.linkedin.com/in/fabrice-tui">Fab Web Design</a></p>
+        <p><%= Shop.first.name %> © 2023 - All rights reserved || Designed By: <a href="www.linkedin.com/in/fabrice-tui">Fab Web Design</a></p>
       </div>
     </div>
 
