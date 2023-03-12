@@ -39,7 +39,7 @@ html {
 }
 
 main {
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 220px);
 }
 
 a {
@@ -48,4 +48,8 @@ a {
 
 hr {
   border-top: none;
+}
+
+li {
+  list-style: none;
 }
