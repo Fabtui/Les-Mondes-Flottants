@@ -1,8 +1,7 @@
 #navbar-large-screen {
   position: fixed;
   top: 0;
-  height: 10vh;
-  min-height: 60px;
+  min-height: 100px;
   width: 100vw;
   background-color: rgba($color: $black, $alpha: 0.7);
   box-shadow: 0px 8px 20px #0a0a0a85;
@@ -98,7 +97,7 @@
 .artist-link {
   position: relative;
   &:hover .artist-dropdown {
-    transform: translateY(102px);
+    transform: translateY(100px);
     opacity: 1;
   }
 }

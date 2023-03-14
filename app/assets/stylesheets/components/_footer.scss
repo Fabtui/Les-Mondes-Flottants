@@ -1,10 +1,13 @@
 .footer {
-  color: $custom-grey;
+  color: $light-grey;
   padding: 0 2vw;
   background: black;
   padding-top: 30px;
   font-family: 'Play', sans-serif;
   text-align: center;
+  a {
+    color: $light-grey;
+  }
 }
 
 .footer-up-section {
