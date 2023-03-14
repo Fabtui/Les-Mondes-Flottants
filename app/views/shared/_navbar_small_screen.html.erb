@@ -1,9 +1,5 @@
 <div id="navbar-small-screen">
-  <div class="home-logo">
-    <%= link_to "/" do %>
-      <%= image_tag("logo.png", id:"home-logo-button") %>
-    <% end %>
-  </div>
+  <%= render 'shared/logo' %>
 
   <a href="#navigation" class="nav-trigger">
     <span></span>
@@ -26,11 +22,8 @@
   <% unless controller_name == 'pages' && action_name == 'home' %>
     <li><%= link_to 'Accueil', root_path, class:'link-line' %></li>
   <% end %>
-  <% unless controller_name == 'tattoos' && action_name == 'index' %>
-    <li><%= link_to 'Gallerie', '#', class:'link-line' %></li>
-  <% end %>
-  <% unless controller_name == 'arts' && action_name == 'index' %>
-    <li><%= link_to 'Artworks', '#', class:'link-line' %></li>
+  <% unless controller_name == 'artists' && action_name == 'index' %>
+    <li><%= link_to 'Artistes', '#', class:'link-line' %></li>
   <% end %>
   <% unless controller_name == 'pages' && action_name == 'shop' %>
     <li><%= link_to 'Shop', '#', class:'link-line' %></li>
