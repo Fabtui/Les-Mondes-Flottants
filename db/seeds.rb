@@ -1,3 +1,5 @@
+require "open-uri"
+
 # --------------------------------USER------------------------------------
 
 User.destroy_all
@@ -35,7 +37,12 @@ shop = Shop.create(
   sunday_opening: 'Fermé',
 )
 
+file = URI.open("app/assets/images/logo.png")
+shop.logo.attach(io: file, filename: "nes.png", content_type: "image/png")
+shop.save
+
 puts "#{Shop.count} shop created"
+
 
 # --------------------------------ARTIST------------------------------------
 

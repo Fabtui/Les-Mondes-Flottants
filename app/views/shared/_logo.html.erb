@@ -1,0 +1,9 @@
+<div class="home-logo">
+  <%= link_to "/" do %>
+    <% if Shop.first.logo.attached? %>
+      <%= cl_image_tag Shop.first.logo.key, id:"home-logo-button" %>
+    <% else %>
+      <%= image_tag("logo.png", id:"home-logo-button") %>
+    <% end %>
+  <% end %>
+</div>
