@@ -38,7 +38,7 @@ shop = Shop.create(
 )
 
 file = URI.open("app/assets/images/logo.png")
-shop.logo.attach(io: file, filename: "nes.png", content_type: "image/png")
+shop.logo.attach(io: file, filename: "logo.png", content_type: "image/png")
 shop.save
 
 puts "#{Shop.count} shop created"
@@ -49,9 +49,15 @@ puts "#{Shop.count} shop created"
 Artist.destroy_all
 puts "Artist cleaned"
 
-artist1 = Artist.create(
+odahil = Artist.create(
   name: 'Odahil',
+  speciality: 'Tatoueur',
   description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium voluptatem eum officiis perspiciatis quae vel. Officia eveniet corrupti aliquid libero, expedita reprehenderit at? Qui alias architecto fuga voluptatibus suscipit magnam!',
 )
+odahil_profile_pic = URI.open("app/assets/images/odahil/Odahil_profile.jpg")
+odahil.profile_pic.attach(io: odahil_profile_pic, filename: "#{odahil.name}-profile.jpg", content_type: "image/jpg")
+odahil_photo1 = URI.open("app/assets/images/odahil/krialid3.jpg")
+odahil.photo1.attach(io: odahil_photo1, filename: "#{odahil.name}-photo1.jpg", content_type: "image/jpg")
+odahil.save
 
 puts "#{Artist.count} artist created"

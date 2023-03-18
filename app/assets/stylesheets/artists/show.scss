@@ -1,0 +1,133 @@
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10vh 0;
+}
+
+.profile-picture {
+  height: 60vh;
+  box-shadow: 4px 4px 10px black;
+}
+
+.profile-content-text {
+  margin: 5%;
+  transition: 1s;
+
+  span {
+    text-align: right;
+    width: 100%;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  h2 {
+    font-weight: 300;
+    padding-bottom: 12px;
+    font-size: 1.3rem;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.815);
+    font-weight: 600;
+
+    &:hover {
+      color: white;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+  }
+}
+
+ // ----------------------CORNERS--------------------------------
+ .profile-content-text {
+   h2 {
+     position: relative;
+     line-height: 2rem;
+   }
+
+   h2:before {
+     position: absolute;
+     content: "";
+     width: 30px;
+     height: 30px;
+     top: -16px;
+     left: -16px;
+     z-index: -1;
+     border-left: 1px solid $white;
+     border-top: 1px solid $white;
+   }
+
+   h2:after {
+     position: absolute;
+     content: "";
+     width: 30px;
+     height: 30px;
+     right: -16px;
+     bottom: 0px;
+     z-index: -1;
+     border-right: 1px solid $white;
+     border-bottom: 1px solid $white;
+   }
+ }
+
+ // ------------------------RESPONSIVE---------------------------
+
+ @media screen and (max-width: 1400px) {
+   .profile-content-text {
+     padding: 8%;
+   }
+
+   h2 {
+     font-size: 1rem;
+   }
+ }
+
+ @media screen and (max-width: 1200px) {
+   .profile-content-text {
+     padding: 30px;
+
+     h2 {
+       font-size: 1rem;
+     }
+   }
+ }
+
+ @media screen and (max-width: 750px) {
+   .profile-container {
+     padding: 30px 10% 10px 10%;
+
+     img {
+       max-width: 80vw;
+       height: 400px;
+     }
+   }
+
+   #odahil-profile-pic {
+     margin-left: 20px;
+   }
+
+   .profile-picture {
+     margin-bottom: 40px;
+   }
+
+   .profile-content {
+     display: block;
+     margin: 0;
+
+     h2 {
+       font-size: 16px;
+       line-height: 1.5rem;
+     }
+   }
+
+   .profile-contact-link {
+     margin-top: 52px;
+     height: auto;
+   }
+
+   .align-right {
+     margin-bottom: 10vh;
+   }
+ }
