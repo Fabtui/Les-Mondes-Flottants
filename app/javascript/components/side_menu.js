@@ -17,3 +17,19 @@ export const showMenu = () => {
   }
 };
 
+export const artistLinkClick = () => {
+  const navTrigger = document.querySelector("#artist-link");
+
+  if (navTrigger) {
+    console.log('coucou');
+    function toggleArtists(e) {
+      e.preventDefault();
+      const artistsLinks = document.querySelectorAll(".link-line-artist");
+      artistsLinks.forEach(link => {
+        link.classList.toggle('hidden')
+      });
+    }
+
+    navTrigger.addEventListener("click", toggleArtists);
+  }
+};

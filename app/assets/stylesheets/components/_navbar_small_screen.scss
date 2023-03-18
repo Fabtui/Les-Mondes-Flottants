@@ -177,6 +177,11 @@
   animation-delay: .6s;
 }
 
+.link-line-artist {
+  border-left: 1px solid $black;
+  margin-left: 20px;
+}
+
 @keyframes slide-in {
   0% {
     opacity: 0;
