@@ -52,7 +52,7 @@ puts "Artist cleaned"
 odahil = Artist.create(
   name: 'Odahil',
   speciality: 'Tatoueur',
-  description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium voluptatem eum officiis perspiciatis quae vel. Officia eveniet corrupti aliquid libero, expedita reprehenderit at? Qui alias architecto fuga voluptatibus suscipit magnam!',
+  description: "Tatoueur au sein des Mondes Flottants; je suis illustrateur, et tatoueur. Spécialiste du néo-traditionnel, et de l’ornemental; en couleurs, ou en noir et nuances de gris. J'adore explorer de nouveaux designs, tout en rajoutant un aspect ornemental et symétrique. Place à vos envies !",
 )
 odahil_profile_pic = URI.open("app/assets/images/odahil/Odahil_profile.jpg")
 odahil.profile_pic.attach(io: odahil_profile_pic, filename: "#{odahil.name}-profile.jpg", content_type: "image/jpg")

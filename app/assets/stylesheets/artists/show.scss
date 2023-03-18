@@ -2,11 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10vh 0;
+  margin: 5vh 0;
 }
 
 .profile-picture {
-  height: 60vh;
+  height: 55vh;
   box-shadow: 4px 4px 10px black;
 }
 
@@ -104,12 +104,8 @@
      }
    }
 
-   #odahil-profile-pic {
-     margin-left: 20px;
-   }
-
    .profile-picture {
-     margin-bottom: 40px;
+     margin-bottom: 32px;
    }
 
    .profile-content {
