@@ -1,3 +1,22 @@
 <div class="main-container">
-  <%= @artist.name %>
+  <div class="secondary-container">
+    <h1><%= @artist.name %></h1>
+    <p><%= @artist.speciality %></p>
+    <div class="profile-content">
+
+      <% if @artist.profile_pic.attached? %>
+        <%= cl_image_tag @artist.profile_pic.key, class:"profile-picture align-left slide-in", id:"odahil-profile-pic"%>
+      <% else %>
+        <%= image_tag "app/assets/images/profile_placeholder.jpg", class:"profile-picture align-left slide-in", id:"odahil-profile-pic"%>
+      <% end %>
+
+      <div class="profile-content-text">
+        <h2>
+        <%= @artist.description %>
+        <hr>
+        <span><%= @artist.name %><span>
+        </h2>
+      </div>
+    </div>
+  </div>
 </div>
