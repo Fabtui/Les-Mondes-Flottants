@@ -1,0 +1,47 @@
+#threejs canvas {
+  // width: 100px;
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+}
+
+.loading-container {
+  transition: all 1.5s;
+  position: relative;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: $black;
+  #loading-title {
+    transform: translateY(15vh);
+    font-size: 3rem;
+    font-weight: 300;
+  }
+  #loading-button {
+    transform: translateY(75vh);
+    font-size: 2rem;
+    font-weight: 300;
+    color: $light-grey;
+    transition: .2s;
+    &:hover {
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .loading-container {
+    #loading-title {
+      font-size: 1.5rem;
+    }
+    #loading-button {
+      font-size: 1rem;
+    }
+  }
+}
+
+.zoom-in {
+  transform: scale(6);
+  opacity: 0;
+}

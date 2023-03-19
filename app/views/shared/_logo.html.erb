@@ -1,5 +1,5 @@
 <div class="home-logo">
-  <%= link_to "/" do %>
+  <%= link_to home_path do %>
     <% if Shop.first.logo.attached? %>
       <%= cl_image_tag Shop.first.logo.key, id:"home-logo-button" %>
     <% else %>

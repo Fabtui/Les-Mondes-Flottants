@@ -20,7 +20,7 @@
 
   <ul class="nav">
   <% unless controller_name == 'pages' && action_name == 'home' %>
-    <li><%= link_to 'Accueil', root_path, class:'link-line' %></li>
+    <li><%= link_to 'Accueil', home_path, class:'link-line' %></li>
   <% end %>
   <% unless controller_name == 'artists' && action_name == 'index' %>
     <li><%= link_to 'Artistes', '#', class:'link-line', id:'artist-link' %></li>
