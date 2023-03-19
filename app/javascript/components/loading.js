@@ -2,7 +2,7 @@
 import * as THREE from "three";
 // import { MeshNormalMaterial } from "three";
 
-export const loading = () => {
+export const loadingCube = () => {
   const threeContainer = document.querySelector("#threejs");
 
   if (threeContainer) {
@@ -30,7 +30,8 @@ export const loading = () => {
       // cube = new THREE.Mesh( geometry, material );
       // scene.add( cube );
 
-      const geometry2 = new THREE.BoxGeometry(10, 10, 10);
+      // const geometry2 = new THREE.BoxGeometry(10, 10, 10);
+      const geometry2 = new THREE.DodecahedronGeometry(7.0, 1)
       const edges = new THREE.EdgesGeometry(geometry2);
       line = new THREE.LineSegments(
         edges,
@@ -44,7 +45,8 @@ export const loading = () => {
 
     const animate = () => {
       requestAnimationFrame(animate);
-      line.rotation.x += 0.001;
+      line.rotation.x += 0.002; // x rotation
+      line.rotation.y += 0.001; // y rotation
       renderer.render(scene, camera);
     };
 
@@ -64,7 +66,6 @@ export const loadingEnterButton = () => {
   const loadingContainer = document.querySelector(".loading-container");
 
   if (loadingContainer) {
-    const loadingButton = document.querySelector("#loading-button");
 
     const redirectHome = () => {
       window.location = ('/home')
@@ -75,6 +76,6 @@ export const loadingEnterButton = () => {
       setTimeout(redirectHome, 1000);
     }
 
-    loadingButton.addEventListener('click', enterLoading)
+    loadingContainer.addEventListener("click", enterLoading);
   }
 }
