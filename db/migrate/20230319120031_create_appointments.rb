@@ -1,7 +1,7 @@
 class CreateAppointments < ActiveRecord::Migration[7.0]
   def change
     create_table :appointments do |t|
-      t.date :date
+      t.datetime :date
       t.text :comment
       t.string :category
       t.bigint :artist_id, null: false

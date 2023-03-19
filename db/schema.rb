@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_19_120225) do
   end
 
   create_table "appointments", force: :cascade do |t|
-    t.date "date"
+    t.datetime "date"
     t.text "comment"
     t.string "category"
     t.bigint "artist_id", null: false
