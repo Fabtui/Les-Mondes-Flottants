@@ -43,14 +43,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_19_120225) do
   end
 
   create_table "appointments", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
     t.datetime "date"
     t.text "comment"
     t.string "category"
+    t.bigint "user_id"
     t.bigint "artist_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_appointments_on_user_id"
+    t.index ["artist_id"], name: "index_appointments_on_artist_id"
   end
 
   create_table "artist_appointments", force: :cascade do |t|
@@ -99,13 +102,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_19_120225) do
     t.boolean "artist", default: false
     t.string "speciality"
     t.text "description"
+    t.string "start_time", default: "00:00"
+    t.string "end_time", default: "00:00"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "appointments", "users"
+  add_foreign_key "appointments", "users", column: "artist_id"
   add_foreign_key "artist_appointments", "appointments"
   add_foreign_key "artist_appointments", "users"
 end
