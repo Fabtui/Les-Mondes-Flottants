@@ -5,12 +5,30 @@ require "open-uri"
 User.destroy_all
 puts "User cleaned"
 
-user = User.create(
+admintest = User.create(
   email: 'toto@mail.com',
   password: 'azerty',
   address: 'Loin',
   admin: true
 )
+
+sami = User.create(
+  password: 'azerty',
+  first_name: 'Sami',
+  last_name: 'Dernouny',
+  admin: true,
+  artist: true,
+  email: 'sami@lesmondesflottants.com',
+  address: 'Rue Blanqui, 42000 Saint Etienne',
+  nickname: 'Odahil',
+  speciality: 'Tatoueur',
+  description: "Tatoueur au sein des Mondes Flottants; je suis illustrateur, et tatoueur. Spécialiste du néo-traditionnel, et de l’ornemental; en couleurs, ou en noir et nuances de gris. J'adore explorer de nouveaux designs, tout en rajoutant un aspect ornemental et symétrique. Place à vos envies !",
+)
+odahil_profile_pic = URI.open("app/assets/images/odahil/Odahil_profile.jpg")
+sami.profile_pic.attach(io: odahil_profile_pic, filename: "#{sami.nickname}-profile.jpg", content_type: "image/jpg")
+odahil_photo1 = URI.open("app/assets/images/odahil/krialid3.jpg")
+sami.photo1.attach(io: odahil_photo1, filename: "#{sami.nickname}-photo1.jpg", content_type: "image/jpg")
+sami.save
 
 puts "#{User.count} user created"
 
@@ -42,22 +60,3 @@ shop.logo.attach(io: file, filename: "logo.png", content_type: "image/png")
 shop.save
 
 puts "#{Shop.count} shop created"
-
-
-# --------------------------------ARTIST------------------------------------
-
-Artist.destroy_all
-puts "Artist cleaned"
-
-odahil = Artist.create(
-  name: 'Odahil',
-  speciality: 'Tatoueur',
-  description: "Tatoueur au sein des Mondes Flottants; je suis illustrateur, et tatoueur. Spécialiste du néo-traditionnel, et de l’ornemental; en couleurs, ou en noir et nuances de gris. J'adore explorer de nouveaux designs, tout en rajoutant un aspect ornemental et symétrique. Place à vos envies !",
-)
-odahil_profile_pic = URI.open("app/assets/images/odahil/Odahil_profile.jpg")
-odahil.profile_pic.attach(io: odahil_profile_pic, filename: "#{odahil.name}-profile.jpg", content_type: "image/jpg")
-odahil_photo1 = URI.open("app/assets/images/odahil/krialid3.jpg")
-odahil.photo1.attach(io: odahil_photo1, filename: "#{odahil.name}-photo1.jpg", content_type: "image/jpg")
-odahil.save
-
-puts "#{Artist.count} artist created"
