@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/home', to: "pages#home"
 
   resources :artists, only: [:show]
+  post '/artists/:artist_id/appointments', to: 'appointments#create', as: 'user_appointments'
 end
