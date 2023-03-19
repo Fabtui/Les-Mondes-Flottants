@@ -19,4 +19,12 @@
       </div>
     </div>
   </div>
+  <div class="appoinement-container">
+    <%= simple_form_for [@artist, @appointment] do |f| %>
+      <%= f.input :date %>
+      <%= f.input :comment %>
+      <%= f.input :category, collection: Appointment.categories %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
 </div>

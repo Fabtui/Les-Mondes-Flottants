@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates_presence_of :address, on: :create, message: "Merci d'ajouter votre adresse"
 
-  has_many :artists, class_name: "artist", foreign_key: "reference_id"
+  has_many :appointments
 
   has_one_attached :profile_pic
   has_one_attached :photo1

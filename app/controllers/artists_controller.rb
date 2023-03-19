@@ -3,5 +3,6 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = User.artists.find(params[:id])
+    @appointment = Appointment.new
   end
 end
