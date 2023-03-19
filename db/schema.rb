@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_14_084003) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_19_120225) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,12 +42,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_084003) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "artists", force: :cascade do |t|
-    t.string "name"
-    t.string "speciality"
-    t.text "description"
+  create_table "appointments", force: :cascade do |t|
+    t.date "date"
+    t.text "comment"
+    t.string "category"
+    t.bigint "artist_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_appointments_on_user_id"
+  end
+
+  create_table "artist_appointments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "appointment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["appointment_id"], name: "index_artist_appointments_on_appointment_id"
+    t.index ["user_id"], name: "index_artist_appointments_on_user_id"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -80,11 +92,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_084003) do
     t.datetime "updated_at", null: false
     t.string "address"
     t.string "phone"
-    t.boolean "admin"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "nickname"
+    t.boolean "admin", default: false
+    t.boolean "artist", default: false
+    t.string "speciality"
+    t.text "description"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "appointments", "users"
+  add_foreign_key "artist_appointments", "appointments"
+  add_foreign_key "artist_appointments", "users"
 end
