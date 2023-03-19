@@ -9,5 +9,7 @@ class AddAddressToUser < ActiveRecord::Migration[7.0]
     add_column :users, :artist, :boolean, default: false
     add_column :users, :speciality, :string
     add_column :users, :description, :text
+    add_column :users, :start_time, :string, default: '00:00'
+    add_column :users, :end_time, :string, default: '00:00'
   end
 end

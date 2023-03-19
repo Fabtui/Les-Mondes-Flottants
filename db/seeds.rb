@@ -7,6 +7,7 @@ puts "User cleaned"
 
 admintest = User.create(
   email: 'toto@mail.com',
+  nickname: 'Toto',
   password: 'azerty',
   address: 'Loin',
   admin: true
@@ -23,6 +24,8 @@ sami = User.create(
   nickname: 'Odahil',
   speciality: 'Tatoueur',
   description: "Tatoueur au sein des Mondes Flottants; je suis illustrateur, et tatoueur. Spécialiste du néo-traditionnel, et de l’ornemental; en couleurs, ou en noir et nuances de gris. J'adore explorer de nouveaux designs, tout en rajoutant un aspect ornemental et symétrique. Place à vos envies !",
+  start_time: "9:00",
+  end_time: "17:00",
 )
 odahil_profile_pic = URI.open("app/assets/images/odahil/Odahil_profile.jpg")
 sami.profile_pic.attach(io: odahil_profile_pic, filename: "#{sami.nickname}-profile.jpg", content_type: "image/jpg")
