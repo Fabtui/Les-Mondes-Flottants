@@ -21,7 +21,6 @@ export const artistLinkClick = () => {
   const navTrigger = document.querySelector("#artist-link");
 
   if (navTrigger) {
-    console.log('coucou');
     function toggleArtists(e) {
       e.preventDefault();
       const artistsLinks = document.querySelectorAll(".link-line-artist");
