@@ -1,0 +1,47 @@
+.appointment-shadow {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: -webkit-fill-available;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appointment-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  h2 {
+    font-size: 1.5rem;
+  }
+  i {
+    font-size: 2rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.appointment-container {
+  display: flex;
+  justify-content: center;
+}
+
+.appointment-form {
+  background: rgba(0, 0, 0, 0.7);
+  width: 50vw;
+  transition: 0.1s;
+}
+
+@media screen and (max-width: 1000px) {
+  .appointment-form {
+    width: 95vw;
+  }
+
+  .appointment-shadow {
+    height: calc(100vh - 105px);
+  }
+}

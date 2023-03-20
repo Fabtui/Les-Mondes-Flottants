@@ -1,8 +1,17 @@
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .profile-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 5vh 0;
+}
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
 }
 
 .profile-picture {
@@ -94,7 +103,7 @@
    }
  }
 
- @media screen and (max-width: 750px) {
+ @media screen and (max-width: 850px) {
    .profile-container {
      padding: 30px 10% 10px 10%;
 
@@ -104,7 +113,7 @@
      }
    }
 
-   .profile-picture {
+   .profile-pic-container {
      margin-bottom: 32px;
    }
 

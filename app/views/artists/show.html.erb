@@ -1,16 +1,24 @@
-<%= javascript_pack_tag 'artist_show' %>
+<%#= javascript_pack_tag 'artist_show' %>
 
 <div class="main-container">
   <div class="secondary-container">
-   <h1><%= @artist.nickname %></h1>
-    <p><%= @artist.speciality %></p>
+  <div class="profile-header">
+    <div class="profile-header-left">
+      <h1><%= @artist.nickname %></h1>
+      <p><%= @artist.speciality %></p>
+    </div>
+    <div class="profile-header-right">
+      <span id='rdv-button' class="btn btn-secondary">Prendre rendez-vous</span>
+    </div>
+  </div>
     <div class="profile-content">
-
-      <% if @artist.profile_pic.attached? %>
-        <%= cl_image_tag @artist.profile_pic.key, class:"profile-picture align-left slide-in", id:"odahil-profile-pic"%>
-      <% else %>
-        <%= image_tag "app/assets/images/profile_placeholder.jpg", class:"profile-picture align-left slide-in", id:"odahil-profile-pic"%>
-      <% end %>
+      <div class="profile-pic-container">
+        <% if @artist.profile_pic.attached? %>
+          <%= cl_image_tag @artist.profile_pic.key, class:"profile-picture align-left slide-in", id:"odahil-profile-pic"%>
+        <% else %>
+          <%= image_tag "app/assets/images/profile_placeholder.jpg", class:"profile-picture align-left slide-in", id:"odahil-profile-pic"%>
+        <% end %>
+      </div>
 
       <div class="profile-content-text">
         <h2>
@@ -20,17 +28,7 @@
         </h2>
       </div>
     </div>
-    <div class="appoinement-container" data-booked-date=<%= @appointments %> data-start-time=<%= @artist.start_time %> data-end-time=<%= @artist.end_time %>>
-      <%= simple_form_for [@artist, @appointment] do |f| %>
-        <%= f.input :name, label: 'Nom' %>
-        <%= f.input :email, label: 'Email' %>
-        <%= f.input :phone, label: 'Téléphone' %>
-        <%= f.input :date, as: :string, label: 'Date et heure' %>
-        <%= f.input :comment, label: 'Message' %>
-        <%= f.input :category, collection: Appointment.categories, label: 'Type de rendez-vous' %>
-        <%= f.button :submit, class:'btn btn-secondary' %>
-      <% end %>
-    </div>
+    <%= render 'artists/appointment_form', artist: @artist, appointments: @appoinements, appointment: @appointment %>
   </div>
 </div>
 <div class="react-artist-show" data-artist-id=<%= params[:id] %>></div>
