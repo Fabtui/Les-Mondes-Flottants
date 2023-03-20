@@ -5,8 +5,8 @@ export const artistAppointmentFlatpikr = () => {
   const appointmentContainer = document.querySelector(".appointment_date");
 
   if (appointmentContainer) {
-    const data = document.querySelector(".appoinement-container").dataset;
-    const bookedDate = data.bookedDate.split('$')
+    const data = document.querySelector(".appointment-container").dataset;
+    // const bookedDate = data.bookedDate.split('$')
     flatpickr("#appointment_date", {
       enableTime: true,
       dateFormat: "Y-m-d H:i",
@@ -33,3 +33,22 @@ export const artistAppointmentFlatpikr = () => {
     });
   }
 }
+
+export const rdvButtonClick = () => {
+  const rdvButton = document.querySelector("#rdv-button");
+
+  if (rdvButton) {
+    const formDIv = document.querySelector(".appointment-shadow");
+
+    rdvButton.addEventListener('click', () => {
+      formDIv.classList.toggle('hidden')
+    })
+
+    const formCloseButton = document.querySelector('#form-close-button')
+    formCloseButton.addEventListener("click", () => {
+      console.log("click");
+      formDIv.classList.toggle("hidden");
+      formDIv.classList.toggle("form-anim");
+    });
+  }
+};
