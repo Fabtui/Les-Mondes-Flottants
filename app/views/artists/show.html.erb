@@ -1,7 +1,8 @@
+<%= javascript_pack_tag 'artist_show' %>
+
 <div class="main-container">
   <div class="secondary-container">
-    <%#= javascript_pack_tag 'hello_react' %>
-    <h1><%= @artist.nickname %></h1>
+   <h1><%= @artist.nickname %></h1>
     <p><%= @artist.speciality %></p>
     <div class="profile-content">
 
@@ -30,6 +31,6 @@
         <%= f.button :submit, class:'btn btn-secondary' %>
       <% end %>
     </div>
-
   </div>
 </div>
+<div class="react-artist-show" data-artist-id=<%= params[:id] %>></div>
