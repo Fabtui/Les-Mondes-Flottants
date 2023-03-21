@@ -4,7 +4,7 @@ import "./controllers"
 import "bootstrap"
 import { showMenu, artistLinkClick } from "./components/side_menu";
 import { loadingCube, loadingEnterButton } from "./components/loading";
-import { artistAppointmentFlatpikr, rdvButtonClick } from "./components/artist_show";
+import { artistAppointmentFlatpikr, rdvButtonClick, flatpickrDays } from "./components/artist_show";
 
 // import { Turbo } from "@hotwired/turbo-rails";
 // Turbo.session.drive = false;
@@ -16,3 +16,4 @@ loadingCube();
 loadingEnterButton();
 artistAppointmentFlatpikr();
 rdvButtonClick();
+flatpickrDays();

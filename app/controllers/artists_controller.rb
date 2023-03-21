@@ -3,7 +3,8 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = User.artists.find(params[:id])
-    @appointments = @artist.artist_appointments.pluck(:date).map{ |d| d.strftime('%F')}.join('$')
+    # @appointments = @artist.artist_appointments.pluck(:date).map{ |d| d.strftime('%F')}.join('$')
+    @appointments = @artist.artist_appointments.pluck(:date).join('$').gsub(' ', '_')
     @appointment = Appointment.new
   end
 end
