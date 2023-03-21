@@ -1,21 +1,27 @@
 <div class="tattoo-card-container">
-  <% tattoos.each do |tattoo| %>
-    <% if tattoo.photo.key %>
+  <div class="swiper swiper-tattoo-cards">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <% tattoos.each do |tattoo| %>
+          <% if tattoo.photo.key %>
 
-      <div class="tattoo-card" id=<%= tattoo.id %>>
-        <div class="spinner-border text-light" role="status">
-        </div>
-        <div class="tattoo-card-content">
-          <div class="tattoo-card-image lightbox-img grey-filter" data-id=<%= tattoo.id %>>
-            <%= cl_image_tag tattoo.photo.key, crop: :fill, id:"tattoo-list-picture" %>
-            <span id="lines"></span>
-          </div>
-          <div class="tattoo-card-info" id="info-<%= tattoo.id %>">
-            <h4><%= tattoo.name %></h4>
-          </div>
-        </div>
+            <div class="tattoo-card swiper-slide" id=<%= tattoo.id %>>
+              <div class="spinner-border text-light" role="status">
+              </div>
+              <div class="tattoo-card-content">
+                <div class="tattoo-card-image lightbox-img grey-filter" data-id=<%= tattoo.id %>>
+                  <%= cl_image_tag tattoo.photo.key, crop: :fill, id:"tattoo-list-picture" %>
+                  <span id="lines"></span>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
+        <% end %>
       </div>
-
-    <% end %>
-  <% end %>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
 </div>

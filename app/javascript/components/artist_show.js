@@ -1,6 +1,7 @@
 import flatpickr from "flatpickr";
 import { French } from "flatpickr/dist/l10n/fr.js";
 import { foundAvailableHours } from "./services";
+import Swiper from "swiper";
 
 export const artistAppointmentFlatpikr = () => {
   const appointmentContainer = document.querySelector(".appointment_date");
@@ -96,4 +97,28 @@ export const flatpickrDays = () => {
 
   }
 
+}
+
+export const artistTattooSwiper = () => {
+  const swiperContainer = document.querySelector(".swiper-tattoo-cards");
+
+  if (swiperContainer) {
+    
+    const swiper = new Swiper(".swiper-tattoo-cards", {
+      // Optional parameters
+      // loop: true,
+      slidesPerView: 3,
+      spaceBetween: 16,
+      centeredSlides: false,
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        clickable: true,
+      },
+    });
+  }
 }
