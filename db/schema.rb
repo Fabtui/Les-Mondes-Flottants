@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_19_120225) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_21_162100) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -87,6 +87,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_19_120225) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tattoos", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "client"
+    t.datetime "date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tattoos_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -99,7 +110,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_19_120225) do
     t.string "phone"
     t.string "first_name"
     t.string "last_name"
-    t.string "nickname"
+    t.string "name"
     t.boolean "admin", default: false
     t.boolean "artist", default: false
     t.string "speciality"
@@ -119,4 +130,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_19_120225) do
   add_foreign_key "appointments", "users", column: "artist_id"
   add_foreign_key "artist_appointments", "appointments"
   add_foreign_key "artist_appointments", "users"
+  add_foreign_key "tattoos", "users"
 end

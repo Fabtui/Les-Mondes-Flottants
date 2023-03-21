@@ -8,7 +8,7 @@
       <div class="artist-dropdown">
         <ul>
           <% User.artists.each do |artist| %>
-            <li><%= link_to artist.nickname, artist_path(artist.id) %></li>
+            <li><%= link_to artist.name, artist_path(artist.id) %></li>
           <% end %>
         </ul>
       </div>
