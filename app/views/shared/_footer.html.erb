@@ -1,7 +1,5 @@
 <footer>
-
   <div class="footer">
-
     <div class="footer-up-section">
       <div class="footer-left-element">
         <a href="/"><%= image_tag("logo.png") %></a>
@@ -9,20 +7,14 @@
       </div>
 
       <div class="footer-center-element">
-        <div class="social-links">
-          <a href=<%= Shop.first.facebook %>><i class="fa fa-facebook"></i></a>
-          <a href=<%= Shop.first.instagram %>><i class="fa fa-instagram"></i></a>
-          <a href=<%= Shop.first.twitter %>><i class="fa fa-twitter"></i></a>
-          <%# <a href="#"><i class="fa fa-linkedin-square"></i></a> %>
-        </div>
+        <%= render 'shared/social_links', element: Shop.first %>
 
         <div class="row">
           <ul>
-            <li><a href="#">Artists</a> |</li>
-            <li><a href="#">Our Services</a> |</li>
-            <li><a href="#">Privacy Policy</a> |</li>
-            <li><a href="#">Terms & Conditions</a> |</li>
-            <li><a href="#"> Career</a></li>
+            <li><a href="#">Artists</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
           </ul>
         </div>
       </div>
@@ -36,7 +28,7 @@
         </div>
       </div>
 
-      </div>
+    </div>
 
     <div class="footer-down-section">
       <div class="row footer-caption">
