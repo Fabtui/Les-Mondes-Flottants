@@ -3,6 +3,7 @@ class Appointment < ApplicationRecord
 
   belongs_to :artist, class_name: "User"
   belongs_to :user, class_name: "User", optional: true
+  validates :date, uniqueness: { scope: :artist_id }
   validates_presence_of :category, on: :create, inclusion: { in: CATEGORIES }
   validates_presence_of :date, on: :create
 
