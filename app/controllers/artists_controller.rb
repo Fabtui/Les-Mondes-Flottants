@@ -6,5 +6,6 @@ class ArtistsController < ApplicationController
     # @appointments = @artist.artist_appointments.pluck(:date).map{ |d| d.strftime('%F')}.join('$')
     @appointments = @artist.artist_appointments.pluck(:date).join('$').gsub(' ', '_')
     @appointment = Appointment.new
+    @tattoos = @artist.tattoos
   end
 end
