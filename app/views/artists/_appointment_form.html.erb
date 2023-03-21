@@ -1,6 +1,12 @@
 <div class="appointment-shadow hidden">
   <div class="appointment-container">
-    <div class="appointment-form" data-booked-date=<%= appointments %> data-start-time=<%= artist.start_time %> data-end-time=<%= artist.end_time %>>
+
+    <% if appointments.empty? %>
+      <div class="appointment-form" data-start-time=<%= artist.start_time %> data-end-time=<%= artist.end_time %>>
+    <% else %>
+      <div class="appointment-form" data-booked-date= <%= appointments %> data-start-time=<%= artist.start_time %> data-end-time=<%= artist.end_time %>>
+    <% end %>
+
     <div class="appointment-form-header">
       <h2>Prendre rendez-vous avec <%= artist.name %></h2>
       <i id="form-close-button" class="fa fa-times"></i>
@@ -8,9 +14,6 @@
       <%= simple_form_for [artist, appointment] do |f| %>
         <%= f.input :name, label: 'Nom' %>
         <%= f.input :email, label: 'Email' %>
-        <%= f.input :password_confirmation,
-                    label: 'Confirmer email',
-                    required: true %>
         <%= f.input :phone, label: 'Téléphone' %>
         <%= f.input :date, as: :string, label: 'Date et heure' %>
         <%= f.input :comment, label: 'Message' %>

@@ -7,7 +7,6 @@ class User < ApplicationRecord
   validates_presence_of :name, on: :create, message: "Merci d'ajouter un nom d'utilisateur"
   validates :start_time, format: { with: /\d{1,2}:\d{2}/, message: "exemple: 9:45 ou 13:00" }
   validates :end_time, format: { with: /\d{1,2}:\d{2}/, message: "exemple: 9:45 ou 13:00" }
-
   has_many :appointments
   has_many :tattoos
   has_one_attached :profile_pic
@@ -18,6 +17,6 @@ class User < ApplicationRecord
   end
 
   def artist_appointments
-    Appointment.where(artist_id: self.id)
+    Appointment.where(artist_id: self.id).sort_by(&:date).select { |a| a.date > Date.yesterday }
   end
 end
