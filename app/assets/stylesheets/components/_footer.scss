@@ -47,6 +47,10 @@
 
 .footer .row ul li {
   display: inline-block;
+  padding: 0px 1rem;
+  &:not(:last-of-type) {
+    border-right: 1px solid $custom-grey;
+  }
 }
 
 .social-links {
@@ -95,12 +99,6 @@
 
   .footer-up-section {
     display: block;
-  }
-
-  .footer .row ul li {
-    display: block;
-    margin: 10px 0px;
-    text-align: left;
   }
 
   .footer .row a i {

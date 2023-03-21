@@ -73,6 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_19_120225) do
     t.string "facebook"
     t.string "instagram"
     t.string "twitter"
+    t.string "linkedin"
     t.string "global_opening"
     t.string "monday_opening"
     t.string "tuesday_opening"
@@ -104,6 +105,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_19_120225) do
     t.text "description"
     t.string "start_time", default: "00:00"
     t.string "end_time", default: "00:00"
+    t.string "facebook"
+    t.string "twitter"
+    t.string "instagram"
+    t.string "linkedin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -53,8 +53,8 @@ shop = Shop.create(
   tuesday_opening: '9h-12h 14h18h',
   wednesday_opening: '9h-12h 14h18h',
   thursday_opening: '9h-12h 14h18h',
-  friday_opening: '9h-12h 14h18h',
-  saturday_opening: '9h-12h 14h18h',
+  friday_opening: '9h-12h 14h-18h',
+  saturday_opening: '9h-12h 14h-18h',
   sunday_opening: 'Fermé',
 )
 

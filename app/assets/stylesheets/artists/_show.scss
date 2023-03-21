@@ -3,6 +3,26 @@
   justify-content: space-between;
 }
 
+.profile-header-left {
+  display: flex;
+  h1 {
+    margin-right: 24px;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.profile-header-left-socials {
+  .social-links {
+    padding: 0;
+    a {
+      margin: 0% 12px;
+      font-size: 1.5rem;
+    }
+  }
+}
+
 .profile-content {
   display: flex;
   justify-content: space-between;
@@ -113,26 +133,30 @@
      }
    }
 
+  .profile-header-left {
+    display: block;
+  }
+
+  .profile-header-left-socials {
+    .social-links {
+      a {
+        margin: 8px 0;
+        margin-right: 12px;
+      }
+    }
+  }
+
    .profile-pic-container {
      margin-bottom: 32px;
    }
 
    .profile-content {
      display: block;
-     margin: 0;
+     margin: 24px 0;
 
      h2 {
        font-size: 16px;
        line-height: 1.5rem;
      }
-   }
-
-   .profile-contact-link {
-     margin-top: 52px;
-     height: auto;
-   }
-
-   .align-right {
-     margin-bottom: 10vh;
    }
  }

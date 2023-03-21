@@ -11,5 +11,9 @@ class AddAddressToUser < ActiveRecord::Migration[7.0]
     add_column :users, :description, :text
     add_column :users, :start_time, :string, default: '00:00'
     add_column :users, :end_time, :string, default: '00:00'
+    add_column :users, :facebook, :string
+    add_column :users, :twitter, :string
+    add_column :users, :instagram, :string
+    add_column :users, :linkedin, :string
   end
 end

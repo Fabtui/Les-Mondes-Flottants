@@ -4,8 +4,13 @@
   <div class="secondary-container">
   <div class="profile-header">
     <div class="profile-header-left">
-      <h1><%= @artist.nickname %></h1>
-      <p><%= @artist.speciality %></p>
+      <div class="profile-header-left-name">
+        <h1><%= @artist.nickname %></h1>
+        <p><%= @artist.speciality %></p>
+      </div>
+      <div class="profile-header-left-socials">
+        <%= render 'shared/social_links', element: @artist %>
+      </div>
     </div>
     <div class="profile-header-right">
       <span id='rdv-button' class="btn btn-secondary">Prendre rendez-vous</span>
