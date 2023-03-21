@@ -15,6 +15,7 @@
   margin: 20px;
   justify-content: space-between;
   border-radius: 5px;
+  box-shadow: 4px 4px 10px black;
 }
 
 .spinner-border {
@@ -24,63 +25,37 @@
 }
 
 .tattoo-card-image {
-  transition: 0.2s;
-
   img {
-    // filter: grayscale(100%);
     height: 250px;
     width: 100%;
     object-fit: cover;
-    transition: 0.2s;
     border-radius: 5px;
+    filter: grayscale(1);
+    transition: 0.2s;
   }
 
   img:hover {
-    // filter: grayscale(0%);
-    transform: scale(1.1);
     cursor: pointer;
-    transition: 0.2s;
+    transform: scale(1.1);
+    filter: none;
   }
 }
 
 .grey-filter {
-  filter: grayscale(1);
   transition: 0.2s;
-}
-
-.tattoo-card-info {
-  transition: 0.2s;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 16px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  pointer-events: none;
-
-  h4 {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin: 0;
-  }
-}
-
-.info-over-image {
-  transition: 0.2s;
-  transform: translateY(-50px);
-}
-
-#tattoo-list-picture {
-  position: relative;
 }
 
 #lines {
+  border-radius: 4px;
   pointer-events: none;
   width: 230px;
   height: 230px;
   transform: translate(10px, 10px);
-  border: 2px solid rgba(0, 0, 0, 0.295);
+  border: 1px solid rgba(0, 0, 0, 0.295);
   background: none;
   position: absolute;
+  top: 20px;
+  left: 20px;
 
   &:hover {
     cursor: pointer;
@@ -115,8 +90,10 @@
   }
 
   #lines {
-    width: 88px;
-    height: 88px;
+    top: 5px;
+    left: 5px;
+    width: 94px;
+    height: 94px;
     transform: translate(6px, 6px);
     border: 1px solid rgba(0, 0, 0, 0.295);
   }
