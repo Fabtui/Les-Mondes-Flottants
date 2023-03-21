@@ -27,7 +27,7 @@
   <% end %>
   <% unless controller_name == 'artists' && action_name == 'index' %>
     <% User.artists.each do |artist| %>
-      <li><%= link_to artist.nickname, artist_path(artist.id), class:'link-line link-line-artist hidden' %></li>
+      <li><%= link_to artist.name, artist_path(artist.id), class:'link-line link-line-artist hidden' %></li>
     <% end %>
   <% end %>
   <% unless controller_name == 'pages' && action_name == 'shop' %>

@@ -7,7 +7,7 @@ class Appointment < ApplicationRecord
   validates_presence_of :category, on: :create, inclusion: { in: CATEGORIES }
   validates_presence_of :date, on: :create
   validates_presence_of :name, on: :create
-  validates_presence_of :email, on: :create
+  validates_presence_of :email, on: :create, confirmation: true
   validates_presence_of :phone, on: :create
 
   def self.categories

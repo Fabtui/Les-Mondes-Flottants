@@ -7,7 +7,7 @@ puts "User cleaned"
 
 admintest = User.create(
   email: 'toto@mail.com',
-  nickname: 'Toto',
+  name: 'Toto',
   password: 'azerty',
   address: 'Loin',
   admin: true
@@ -21,16 +21,16 @@ sami = User.create(
   artist: true,
   email: 'sami@lesmondesflottants.com',
   address: 'Rue Blanqui, 42000 Saint Etienne',
-  nickname: 'Odahil',
+  name: 'Odahil',
   speciality: 'Tatoueur',
   description: "Tatoueur au sein des Mondes Flottants; je suis illustrateur, et tatoueur. Spécialiste du néo-traditionnel, et de l’ornemental; en couleurs, ou en noir et nuances de gris. J'adore explorer de nouveaux designs, tout en rajoutant un aspect ornemental et symétrique. Place à vos envies !",
   start_time: "9:00",
   end_time: "17:00",
 )
 odahil_profile_pic = URI.open("app/assets/images/odahil/Odahil_profile.jpg")
-sami.profile_pic.attach(io: odahil_profile_pic, filename: "#{sami.nickname}-profile.jpg", content_type: "image/jpg")
+sami.profile_pic.attach(io: odahil_profile_pic, filename: "#{sami.name}-profile.jpg", content_type: "image/jpg")
 odahil_photo1 = URI.open("app/assets/images/odahil/krialid3.jpg")
-sami.photo1.attach(io: odahil_photo1, filename: "#{sami.nickname}-photo1.jpg", content_type: "image/jpg")
+sami.photo1.attach(io: odahil_photo1, filename: "#{sami.name}-photo1.jpg", content_type: "image/jpg")
 sami.save
 
 puts "#{User.count} user created"
@@ -64,3 +64,47 @@ shop.logo.attach(io: file, filename: "logo.png", content_type: "image/png")
 shop.save
 
 puts "#{Shop.count} shop created"
+
+
+# --------------------------------TATTOO------------------------------------
+
+Tattoo.destroy_all
+puts "Tattoo cleaned"
+
+koi = Tattoo.create!(
+  name: "Carpe",
+  description: "Carpe Koï bleue",
+  client: "Simone",
+  user_id: sami.id,
+  date: "2021-09-03T21:30",
+)
+koi.photo.attach(io: File.open('app/assets/images/tattoos/tattoo2.jpg'), filename: 'koi.jpg', content_type:'image/jpg')
+
+montgolfiere = Tattoo.create!(
+  name: "Montgolfiere",
+  description: "Une mongole fière",
+  client: "Jeannine",
+  user_id: sami.id,
+  date: "2021-09-03T21:30",
+)
+montgolfiere.photo.attach(io: File.open('app/assets/images/tattoos/tattoo3.jpg'), filename: 'puppet.jpg', content_type:'image/jpg')
+
+picsou = Tattoo.create!(
+  name: "Picsou",
+  description: "Picsou ma gueule",
+  client: "Jean Mourad",
+  user_id: sami.id,
+  date: "2021-09-03T21:30",
+)
+picsou.photo.attach(io: File.open('app/assets/images/tattoos/tattoo4.jpg'), filename: 'picsou.jpg', content_type:'image/jpg')
+
+geo = Tattoo.create!(
+  name: "Geometric",
+  description: "Un blason non?",
+  client: "Jean Michel",
+  user_id: sami.id,
+  date: "2021-09-03T21:30",
+)
+geo.photo.attach(io: File.open('app/assets/images/tattoos/tattoo5.jpg'), filename: 'geo.jpg', content_type:'image/jpg')
+
+puts "#{Tattoo.count} shop created"

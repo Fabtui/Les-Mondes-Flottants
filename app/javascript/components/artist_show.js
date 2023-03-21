@@ -61,7 +61,12 @@ export const flatpickrDays = () => {
     const data = document.querySelector(".appointment-form").dataset;
     const startTime = data.startTime
     const endTime = data.endTime;
-    const bookedDates = data.bookedDate.split('$').map((day) => day.replace("_", " ").replace("_UTC", "").split(' '))
+    console.log(data.bookedDate);
+    if (data.bookedDate) {
+      const bookedDates = data.bookedDate.split('$').map((day) => day.replace("_", " ").replace("_UTC", "").split(' '))
+    } else {
+      const bookedDates = []
+    }
 
     dateInput.addEventListener("change", () => {
       const inputDate = dateInput.value.split(' ')[0];
