@@ -14,23 +14,15 @@ export const artistAppointmentFlatpikr = () => {
       locale: French,
       // theme: "dark",
       minDate: "today",
-      minuteIncrement: 60,
+      minuteIncrement: 30,
       minTime: data.startTime,
       maxTime: data.endTime,
       disable: [
-        // ...bookedDate,
         function (date) {
           // return true to disable -> disable saturday (6) and sunday (0)
           return date.getDay() === 0 || date.getDay() === 6;
         },
       ],
-
-      // disable: [
-      //   function (date) {
-      //     // disable every multiple of 8
-      //     return !(date.getDate() % 8);
-      //   },
-      // ],
     });
   }
 }
@@ -61,12 +53,7 @@ export const flatpickrDays = () => {
     const data = document.querySelector(".appointment-form").dataset;
     const startTime = data.startTime
     const endTime = data.endTime;
-    console.log(data.bookedDate);
-    if (data.bookedDate) {
-      const bookedDates = data.bookedDate.split('$').map((day) => day.replace("_", " ").replace("_UTC", "").split(' '))
-    } else {
-      const bookedDates = []
-    }
+    const bookedDates = data.bookedDate ? data.bookedDate.split('$').map((day) => day.replace("_", " ").replace("_UTC", "").split(' ')) : []
 
     dateInput.addEventListener("change", () => {
       const inputDate = dateInput.value.split(' ')[0];
