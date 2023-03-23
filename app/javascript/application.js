@@ -5,6 +5,7 @@ import "bootstrap"
 import { showMenu, artistLinkClick } from "./components/side_menu";
 import { loadingCube, loadingEnterButton } from "./components/loading";
 import { artistAppointmentFlatpikr, rdvButtonClick, flatpickrDays, artistTattooSwiper } from "./components/artist_show";
+import { lightbox } from "./components/lightbox";
 
 import { Turbo } from "@hotwired/turbo-rails";
 Turbo.session.drive = false;
@@ -18,3 +19,4 @@ artistAppointmentFlatpikr();
 rdvButtonClick();
 flatpickrDays();
 artistTattooSwiper();
+lightbox()
