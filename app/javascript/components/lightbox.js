@@ -4,14 +4,16 @@ export const lightbox = () => {
     const lightboxImages = document.querySelectorAll(".lightbox-img");
     const previewBox = document.querySelector(".preview-box");
     const previewImg = previewBox.querySelector("img");
-    // const currentImg = previewBox.querySelector(".current-img");
-    // const totalImg = previewBox.querySelector(".total-img");
+    const nextButton = document.querySelector("#ligthbox-next");
+    const prevButton = document.querySelector("#ligthbox-prev");
     const shadow = document.querySelector(".shadow");
 
     lightboxImages.forEach((image) => {
       image.addEventListener("click", () => {
         const imageURL = image.querySelector("img").src;
         const closeIcon = previewBox.querySelector(".details-icon");
+        nextButton.style.display = 'block';
+        prevButton.style.display = "block";
         previewImg.src = imageURL;
         previewImg.dataset.index = image.dataset.index;
         previewBox.classList.add("show");
@@ -20,6 +22,8 @@ export const lightbox = () => {
         function closePreviewBox() {
           previewBox.classList.remove("show");
           shadow.style.display = "none";
+          nextButton.style.display = "none";
+          prevButton.style.display = "none";
           document.querySelector("body").style.overflow = "scroll";
         }
 
