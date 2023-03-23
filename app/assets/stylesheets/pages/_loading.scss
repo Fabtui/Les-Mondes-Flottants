@@ -33,6 +33,22 @@
   }
 }
 
+.loading-content {
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.zoom-in {
+  transform: scale(6);
+  opacity: 0;
+}
+
 @media screen and (max-width: 850px) {
   .loading-container {
     #loading-title {
@@ -44,7 +60,47 @@
   }
 }
 
-.zoom-in {
-  transform: scale(6);
-  opacity: 0;
+
+// -------------------BACKGROUND AND ANIMATION-----------------------
+
+.loading-container {
+  background-image: url('./clouds.jpg');
+  filter: grayscale(0.9);
+  background-size: cover;
+  -webkit-animation: slidein 60s;
+  animation: slidein 60s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+
 }
