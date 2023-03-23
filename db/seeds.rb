@@ -1,5 +1,8 @@
 require "open-uri"
 
+Appointment.destroy_all
+puts "Appointment cleaned"
+
 # --------------------------------USER------------------------------------
 
 User.destroy_all
@@ -71,7 +74,7 @@ puts "#{Shop.count} shop created"
 Tattoo.destroy_all
 puts "Tattoo cleaned"
 
-koi = Tattoo.create!(
+koi = Tattoo.new(
   name: "Carpe",
   description: "Carpe Koï bleue",
   client: "Simone",
@@ -79,8 +82,9 @@ koi = Tattoo.create!(
   date: "2021-09-03T21:30",
 )
 koi.photo.attach(io: File.open('app/assets/images/tattoos/tattoo2.jpg'), filename: 'koi.jpg', content_type:'image/jpg')
+koi.save
 
-montgolfiere = Tattoo.create!(
+montgolfiere = Tattoo.new(
   name: "Montgolfiere",
   description: "Une mongole fière",
   client: "Jeannine",
@@ -88,8 +92,9 @@ montgolfiere = Tattoo.create!(
   date: "2021-09-03T21:30",
 )
 montgolfiere.photo.attach(io: File.open('app/assets/images/tattoos/tattoo3.jpg'), filename: 'puppet.jpg', content_type:'image/jpg')
+montgolfiere.save
 
-picsou = Tattoo.create!(
+picsou = Tattoo.new(
   name: "Picsou",
   description: "Picsou ma gueule",
   client: "Jean Mourad",
@@ -97,8 +102,9 @@ picsou = Tattoo.create!(
   date: "2021-09-03T21:30",
 )
 picsou.photo.attach(io: File.open('app/assets/images/tattoos/tattoo4.jpg'), filename: 'picsou.jpg', content_type:'image/jpg')
+picsou.save
 
-geo = Tattoo.create!(
+geo = Tattoo.new(
   name: "Geometric",
   description: "Un blason non?",
   client: "Jean Michel",
@@ -106,5 +112,26 @@ geo = Tattoo.create!(
   date: "2021-09-03T21:30",
 )
 geo.photo.attach(io: File.open('app/assets/images/tattoos/tattoo5.jpg'), filename: 'geo.jpg', content_type:'image/jpg')
+geo.save
+
+cat = Tattoo.new(
+  name: "catopatra",
+  description: "Chat égyptchien",
+  client: "Jean Eude",
+  user_id: sami.id,
+  date: "2021-09-03T21:30",
+)
+cat.photo.attach(io: File.open('app/assets/images/tattoos/tattoo6.jpg'), filename: 'cat.jpg', content_type:'image/jpg')
+cat.save
+
+lion = Tattoo.new(
+  name: "simba",
+  description: "Un gros chat",
+  client: "Jean Eude",
+  user_id: sami.id,
+  date: "2021-09-03T21:30",
+)
+lion.photo.attach(io: File.open('app/assets/images/tattoos/tattoo7.jpg'), filename: 'lion.jpg', content_type:'image/jpg')
+lion.save
 
 puts "#{Tattoo.count} shop created"
