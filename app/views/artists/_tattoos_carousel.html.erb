@@ -3,9 +3,9 @@
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        <% tattoos.each do |tattoo| %>
+        <% tattoos.each_with_index do |tattoo, index| %>
           <% if tattoo.photo.key %>
-            <%= render 'artists/tattoo_cards', tattoo:tattoo %>
+            <%= render 'artists/tattoo_cards', tattoo:tattoo, index:index %>
           <% end %>
         <% end %>
       </div>
