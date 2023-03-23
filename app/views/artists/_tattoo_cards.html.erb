@@ -1,0 +1,10 @@
+<div class="tattoo-card lightbox-img swiper-slide" id=<%= tattoo.id %>>
+  <div class="spinner-border text-light" role="status">
+  </div>
+  <div class="tattoo-card-content">
+    <div class="tattoo-card-image lightbox-img grey-filter" data-id=<%= tattoo.id %>>
+      <%= cl_image_tag tattoo.photo.key, crop: :fill, id:"tattoo-list-picture" %>
+      <span id="lines"></span>
+    </div>
+  </div>
+</div>
