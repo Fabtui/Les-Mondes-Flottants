@@ -7,8 +7,8 @@ class User < ApplicationRecord
   validates_presence_of :name, on: :create, message: "Merci d'ajouter un nom d'utilisateur"
   validates :start_time, format: { with: /\d{1,2}:\d{2}/, message: "exemple: 9:45 ou 13:00" }
   validates :end_time, format: { with: /\d{1,2}:\d{2}/, message: "exemple: 9:45 ou 13:00" }
-  has_many :appointments
-  has_many :tattoos
+  has_many :appointments, dependent: :destroy
+  has_many :tattoos, dependent: :destroy
   has_one_attached :profile_pic
   has_one_attached :photo1
 

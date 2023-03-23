@@ -103,15 +103,17 @@ export const artistTattooSwiper = () => {
   const swiperContainer = document.querySelector(".swiper-tattoo-cards");
 
   if (swiperContainer) {
-    
+
     const swiper = new Swiper(".swiper-tattoo-cards", {
       // Optional parameters
       // loop: true,
-      slidesPerView: 3,
-      spaceBetween: 16,
+      slidesPerView: 4,
+      spaceBetween: 12,
       centeredSlides: false,
       // If we need pagination
       pagination: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
         el: ".swiper-pagination",
         dynamicBullets: true,
       },
