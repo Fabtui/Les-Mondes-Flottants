@@ -2,10 +2,13 @@ class Tattoo < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
 
-  validates_presence_of :user_id, if: :user_is_artist?
+  validates_presence_of :photo, message: "Must have a photo"
+  validates_presence_of :user
+  validate :user_is_artist?
+
+  private
 
   def user_is_artist?
-    user = User.find(user_id)
-    user.artist
+    self.errors.add(:user, 'User must be an artist') unless self.user && self.user.artist
   end
 end
