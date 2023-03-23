@@ -1,0 +1,16 @@
+<div class="tattoo-card-container">
+  <div class="swiper swiper-tattoo-cards">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <% tattoos.each do |tattoo| %>
+          <% if tattoo.photo.key %>
+            <%= render 'artists/tattoo_cards', tattoo:tattoo %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+</div>

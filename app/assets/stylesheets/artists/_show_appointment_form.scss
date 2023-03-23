@@ -1,13 +1,14 @@
 .appointment-shadow {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   width: 100vw;
-  height: -webkit-fill-available;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  padding-top: 5vh;
+  z-index: 99999;
 }
 
 .appointment-form-header {
@@ -31,9 +32,11 @@
 }
 
 .appointment-form {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.4);
   width: 50vw;
   transition: 0.1s;
+  height: fit-content;
+  padding: 40px;
 }
 
 .form-hours-container {
