@@ -6,6 +6,16 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
+      <div class="form-input-content">
+          <div class="form-input-content-i">
+            <i class="fa fa-user"></i>
+          </div>
+          <%= f.input :name,
+                      label: false,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "name", placeholder: 'Nom' }%>
+        </div>
         <div class="form-input-content">
           <div class="form-input-content-i">
             <i class="fa fa-envelope"></i>
@@ -14,7 +24,7 @@
                       label: false,
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "email", placeholder: 'ex: exemple@mail.com' }%>
+                      input_html: { autocomplete: "email", placeholder: 'Adresse mail' }%>
         </div>
         <div class="form-input-content">
           <div class="form-input-content-i">
@@ -24,7 +34,7 @@
                       label: false,
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "address", placeholder: 'ex: 166 rue vendôme, 69003 Lyon' }%>
+                      input_html: { autocomplete: "address", placeholder: 'Adresse, ex: 166 rue vendôme, 69003 Lyon' }%>
         </div>
         <div class="form-input-content">
           <div class="form-input-content-i">
@@ -34,7 +44,7 @@
                       label: false,
                       required: false,
                       autofocus: true,
-                      input_html: { placeholder: 'ex: 0612345623' }%>
+                      input_html: { placeholder: 'Téléphone ex: 0612345623' }%>
         </div>
         <div class="form-input-content">
           <div class="form-input-content-i">
@@ -44,7 +54,7 @@
                       label: false,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      input_html: { autocomplete: "new-password" } %>
+                      input_html: { placeholder: 'Mot de passe', autocomplete: "new-password" } %>
         </div>
         <div class="form-input-content">
           <div class="form-input-content-i">
@@ -53,8 +63,7 @@
           <%= f.input :password_confirmation,
                       label: false,
                       required: true,
-                      hint: ("Confirmer mot de passe"),
-                      input_html: { autocomplete: "new-password" } %>
+                      input_html: { placeholder: 'Confirmer mot de passe', autocomplete: "new-password" } %>
         </div>
       </div>
 
