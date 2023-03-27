@@ -8,6 +8,7 @@ class CreateAppointments < ActiveRecord::Migration[7.0]
       t.text :comment
       t.string :category
       t.bigint :user_id
+      t.float :duration
       t.references :artist, foreign_key: { to_table: :users }, null: false
 
       t.timestamps
