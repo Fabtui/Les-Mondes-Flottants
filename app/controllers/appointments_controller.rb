@@ -4,7 +4,9 @@ class AppointmentsController < ApplicationController
   def show
     @appointment = Appointment.find(params[:id])
     @shop = Shop.first
-    @event_link = "https://calendar.google.com/calendar/u/0/r/eventedit?text=RDV #{@shop.name}&details=#{@appointment.category} tatouage&location=#{@shop.address}&dates=#{@appointment.date.strftime("%Y%m%dT%H%M%SZ")}"
+    event_link_description = "Rendez-vous #{@appointment.category} #{@shop.name}. #{@shop.address}.
+    Pour toute modification ou annulation merci de nous contacter au #{@shop.phone}."
+    @event_link = "https://calendar.google.com/calendar/u/0/r/eventedit?text=RDV #{@shop.name}&details=#{event_link_description}&location=#{@shop.address}&dates=#{(@appointment.date - 7200).strftime("%Y%m%dT%H%M%SZ")}/#{(@appointment.date - 3600).strftime("%Y%m%dT%H%M%SZ")}&ctz=Europe/Europe"
   end
 
   def create

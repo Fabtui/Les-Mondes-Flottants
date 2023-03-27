@@ -1,0 +1,37 @@
+.appointment-confirm-container {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appointment-confirm-content {
+  font-size: 1rem;
+  color: $white;
+  background-color: black;
+  box-shadow: 4px 4px 15px 6px black;
+  padding: 2vw;
+  border-radius: 8px;
+  a {
+    color: $white;
+    transition: .2s;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.appointment-confirm-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#appointment-confirm-add-button {
+  margin-bottom: 2rem;
+}
+
+#appointment-confirm-signature {
+  text-align: end;
+}
