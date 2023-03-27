@@ -6,6 +6,7 @@ import { showMenu, artistLinkClick } from "./components/side_menu";
 import { loadingCube, loadingEnterButton } from "./components/loading";
 import { artistAppointmentFlatpikr, rdvButtonClick, flatpickrDays, artistTattooSwiper } from "./components/artist_show";
 import { lightbox, lightboxNavigation } from "./components/lightbox";
+import { navbarScroll } from "./components/navbar";
 
 import { Turbo } from "@hotwired/turbo-rails";
 Turbo.session.drive = false;
@@ -21,3 +22,4 @@ flatpickrDays();
 artistTattooSwiper();
 lightbox()
 lightboxNavigation();
+navbarScroll();
