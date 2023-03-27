@@ -13,6 +13,7 @@ class AppointmentsController < ApplicationController
     appointment = Appointment.new(appointment_params)
     appointment.artist_id = params[:artist_id]
     appointment.user_id = current_user.id if current_user
+    appointment.duration = 1
     if appointment.save
       redirect_to appointment_path(appointment.id), confirm: "Votre rendez-vous a bien été enregistré"
     else
