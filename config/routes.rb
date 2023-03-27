@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/home', to: "pages#home"
   get 'user_root' => 'pages#home', as: :user_root
 
+
+  resources :appointments, only: [:show]
   resources :artists, only: [:show]
   post '/artists/:artist_id/appointments', to: 'appointments#create', as: 'user_appointments'
 

@@ -1,0 +1,18 @@
+<div class="main-container">
+  <div class="secondary-container">
+    <div class="appointment-confirm-container">
+      <div class="appointment-confirm-content">
+        <h3>Votre rendez-vous du <%= @appointment.date.strftime("%d %A %Y à %Hh%M") %> à bien été enregistré, un mail vous a été envoyé à l'adresse <%= @appointment.email %>.</h3>
+        <%= link_to @event_link do %>
+          <h3><i class="fa fa-calendar"></i> Ajouter à votre agenda</h3>
+        <% end %>
+        <h3>Merci pour votre confiance.</h3>
+        <h3>Pour toute modification ou annulation merci de nous contacter au <a href="tel:<%= @shop.phone %>"><%= @shop.phone %></a>.</h3>
+        <br>
+        <h5><%= @shop.name %></h5>
+        <br>
+        <%= link_to 'Retour', :back, class:'btn btn-secondary' %>
+      </div>
+    </div>
+  </div>
+</div>
