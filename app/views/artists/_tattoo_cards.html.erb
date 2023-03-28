@@ -2,7 +2,7 @@
   <div class="spinner-border text-light" role="status">
   </div>
   <div class="tattoo-card-content">
-    <div class="tattoo-card-image lightbox-img grey-filter" data-id=<%= tattoo.id %> data-index=<%= index %>>
+    <div class="tattoo-card-image lightbox-img <%= tattoo.instance_of?(Tattoo) ? "lightbox-tattoo-img" : "lightbox-flash-img" %> grey-filter" data-class=<%= tattoo.class.name %>  data-id=<%= tattoo.id %> data-index=<%= index %>>
       <%= cl_image_tag tattoo.photo.key, crop: :fill, id:"tattoo-list-picture" %>
       <span id="lines"></span>
     </div>

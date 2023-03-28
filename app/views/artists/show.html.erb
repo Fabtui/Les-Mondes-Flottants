@@ -33,7 +33,12 @@
         </h2>
       </div>
     </div>
-    <%= render 'artists/tattoos_carousel', tattoos: @tattoos %>
+    <% unless @tattoos.empty? %>
+      <%= render 'artists/tattoos_carousel', tattoos: @tattoos %>
+    <% end %>
+    <% unless @flashes.empty? %>
+      <%= render 'artists/tattoos_carousel', tattoos: @flashes %>
+    <% end %>
     <%= render 'artists/appointment_form', artist: @artist, appointments: @appointments, appointment: @appointment %>
   </div>
 </div>
