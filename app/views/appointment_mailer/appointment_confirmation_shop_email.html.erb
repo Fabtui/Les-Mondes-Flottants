@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body style="background-color: black; color: white; font-family: Helvetica;">
+    <div class="container" style="padding: 5vw;">
+      <h1>Nouveau rendez-vous pour <%= @appointment.artist.name.capitalize %>.</h1>
+      <br>
+      <div class="user-info" style="padding: 2vw; border: 1px solid white">
+        <p>Le <%= I18n.localize(@appointment.date, format: :long) %> avec <%= @appointment.name %>.</p>
+      </div>
+      <br>
+      <div class="user-info" style="padding: 2vw; border: 1px solid white">
+        <p>Nom: <%= @appointment.name %></p>
+        <p>Tel: <%= @appointment.phone %></p>
+        <p>Mail: <a style="color: white;" href="mailto:<%= @appointment.email %>"><%= @appointment.email %></a></p>
+      </div>
+      <br>
+      <% if @appointment.comment %>
+        <div class="user-info" style="padding: 2vw; border: 1px solid white">
+          <p>Message: <%= @appointment.comment %></p>
+        </div>
+      <% end %>
+      <br>
+      <a style="color: white" href=<%= @event_link %>>Ajouter ce rendez-vous au calendrier</a>
+      <br>
+      <br>
+      <p style="text-align: end;"><%= @shop.name %></p>
+    </div>
+  </body>
+</html>

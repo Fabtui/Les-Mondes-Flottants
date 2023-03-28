@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :create ]
+  skip_before_action :authenticate_user!, only: [ :create, :show ]
 
   def show
     @appointment = Appointment.find(params[:id])
@@ -15,6 +15,8 @@ class AppointmentsController < ApplicationController
     appointment.user_id = current_user.id if current_user
     appointment.duration = 1
     if appointment.save
+      AppointmentMailer.appointment_confirmation_user_email(appointment, Shop.first).deliver_now
+      AppointmentMailer.appointment_confirmation_shop_email(appointment, Shop.first).deliver_now
       redirect_to appointment_path(appointment.id), confirm: "Votre rendez-vous a bien été enregistré"
     else
       redirect_to artist_path(params[:artist_id]), alert: "Une erreur c'est produite, votre rendez-vous n'a pas pu être enregistré"
