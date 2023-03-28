@@ -135,3 +135,23 @@ lion.photo.attach(io: File.open('app/assets/images/tattoos/tattoo7.jpg'), filena
 lion.save
 
 puts "#{Tattoo.count} shop created"
+
+
+# --------------------------------FLASH------------------------------------
+
+Flash.destroy_all
+puts "Flash cleaned"
+
+(1..11).each do |i|
+  flash1 = Flash.new(
+    name: "Flash #{i}",
+    description: "#{i}",
+    client: "client #{i}",
+    user_id: sami.id,
+    date: "2021-09-03T21:30",
+  )
+  flash1.photo.attach(io: File.open("app/assets/images/flashes/art#{i}.jpg"), filename: "flash#{i}.jpg", content_type:'image/jpg')
+  flash1.save
+end
+
+puts "#{Flash.count} flashes created"
