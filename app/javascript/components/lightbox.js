@@ -1,14 +1,14 @@
-export const lightbox = () => {
+export const lightboxTattoos = () => {
   const indexPicture = document.querySelector(".tattoo-card-image");
   if (indexPicture) {
-    const lightboxImages = document.querySelectorAll(".lightbox-img");
+    const lightboxTattooImages = document.querySelectorAll(".lightbox-img");
     const previewBox = document.querySelector(".preview-box");
     const previewImg = previewBox.querySelector("img");
     const nextButton = document.querySelector("#ligthbox-next");
     const prevButton = document.querySelector("#ligthbox-prev");
     const shadow = document.querySelector(".shadow");
 
-    lightboxImages.forEach((image) => {
+    lightboxTattooImages.forEach((image) => {
       image.addEventListener("click", () => {
         const imageURL = image.querySelector("img").src;
         const closeIcon = previewBox.querySelector(".details-icon");
@@ -16,6 +16,7 @@ export const lightbox = () => {
         prevButton.style.display = "block";
         previewImg.src = imageURL;
         previewImg.dataset.index = image.dataset.index;
+        previewImg.dataset.class = image.dataset.class;
         previewBox.classList.add("show");
         shadow.style.display = "block";
 
@@ -34,16 +35,22 @@ export const lightbox = () => {
   }
 };
 
-export const lightboxNavigation = () => {
+export const lightboxTattooNavigation = () => {
   const indexPicture = document.querySelector(".tattoo-card-image");
   if (indexPicture) {
-    const allImages = document.querySelectorAll(".lightbox-img img");
     const nextButton = document.querySelector("#ligthbox-next");
     const prevButton = document.querySelector("#ligthbox-prev");
 
     nextButton.addEventListener('click', () => {
-      const currentImageIndex = parseInt(document.querySelector('.image-box img').dataset.index)
+      const currentImage = document.querySelector(".image-box img");
+      const currentImageIndex = parseInt(currentImage.dataset.index)
       const previewImg = document.querySelector(".preview-box img");
+      let allImages = []
+      if (currentImage.dataset.class === "Tattoo") {
+        allImages = document.querySelectorAll(".lightbox-tattoo-img img");
+      } else {
+        allImages = document.querySelectorAll(".lightbox-flash-img img");
+      }
       if (currentImageIndex < allImages.length - 1) {
         previewImg.src = allImages[currentImageIndex + 1].src;
         previewImg.dataset.index = currentImageIndex + 1;
@@ -54,8 +61,15 @@ export const lightboxNavigation = () => {
     })
 
     prevButton.addEventListener("click", () => {
-      const currentImageIndex = parseInt(document.querySelector(".image-box img").dataset.index);
+      const currentImage = document.querySelector(".image-box img");
+      const currentImageIndex = parseInt(currentImage.dataset.index);
       const previewImg = document.querySelector(".preview-box img");
+      let allImages = [];
+      if (currentImage.dataset.class === "Tattoo") {
+        allImages = document.querySelectorAll(".lightbox-tattoo-img img");
+      } else {
+        allImages = document.querySelectorAll(".lightbox-flash-img img");
+      }
       if (currentImageIndex === 0) {
         previewImg.src = allImages[allImages.length - 1].src;
         previewImg.dataset.index = allImages.length - 1;

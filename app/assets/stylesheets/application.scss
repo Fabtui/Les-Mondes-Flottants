@@ -16,6 +16,10 @@
 @import "artists/index";
 @import "appointments/index";
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: $black;
   color: $white;
