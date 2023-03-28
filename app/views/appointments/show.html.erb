@@ -2,8 +2,8 @@
   <div class="secondary-container">
     <div class="appointment-confirm-container">
       <div class="appointment-confirm-content">
-        <p>Ton rendez-vous du  <%= I18n.localize(@appointment.date, format: :long) %> à bien été enregistré.</p>
-        <p>Un mail t'as été envoyé à l'adresse <%= @appointment.email %>.</p>
+        <p>Ton rendez-vous du  <%= I18n.localize(@appointment.date, format: :long) %> avec <%= @appointment.artist.name %> à bien été enregistré.</p>
+        <p>Un mail de confirmation t'as été envoyé à l'adresse <%= @appointment.email %>.</p>
         <p>Pour toute modification ou annulation merci de nous contacter au <a href="tel:<%= @shop.phone %>"><%= @shop.phone %></a>.</p>
         <%= link_to @event_link, class:"btn btn-secondary", id:"appointment-confirm-add-button", target:'_blanck' do %>
           <i class="fa fa-calendar-plus-o"></i> Ajouter à ton agenda
