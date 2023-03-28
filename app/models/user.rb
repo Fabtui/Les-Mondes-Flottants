@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :end_time, format: { with: /\d{1,2}:\d{2}/, message: "exemple: 9:45 ou 13:00" }
   has_many :appointments, dependent: :destroy
   has_many :tattoos, dependent: :destroy
+  has_many :flashes, dependent: :destroy
   has_one_attached :profile_pic
   has_one_attached :photo1
 
