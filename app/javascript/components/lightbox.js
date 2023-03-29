@@ -1,5 +1,5 @@
 export const lightboxTattoos = () => {
-  const indexPicture = document.querySelector(".tattoo-card-image");
+  const indexPicture = document.querySelector(".lightbox-img");
   if (indexPicture) {
     const lightboxTattooImages = document.querySelectorAll(".lightbox-img");
     const previewBox = document.querySelector(".preview-box");
@@ -36,7 +36,7 @@ export const lightboxTattoos = () => {
 };
 
 export const lightboxTattooNavigation = () => {
-  const indexPicture = document.querySelector(".tattoo-card-image");
+  const indexPicture = document.querySelector(".lightbox-img");
   if (indexPicture) {
     const nextButton = document.querySelector("#ligthbox-next");
     const prevButton = document.querySelector("#ligthbox-prev");

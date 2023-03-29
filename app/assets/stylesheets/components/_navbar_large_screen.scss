@@ -126,6 +126,10 @@
     border-left: 1px solid $custom-grey;
     a{
       color: #dcdcdcab;
+      transition: .1s;
+      &:hover {
+        color: white;
+      }
     }
   }
 }

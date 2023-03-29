@@ -8,11 +8,21 @@
     </div>
   </div>
   <div class="flash-card-content-details">
-    <p>Par: <%= flash.user.name %></p>
-    <ul>
-      <li><i class="fa fa-money"></i><%= flash.price %>€</li>
-      <li><i class="fa fa-arrows-alt"></i><%= flash.height %>cm x <%= flash.width %>cm</li>
-      <li><i class="fa fa-clock-o"></i><%= flash.duration %></li>
-    </ul>
+    <div class="flash-card-content-details-left">
+      <p>Par: <%= flash.user.name %></p>
+      <ul>
+        <li><i class="fa fa-money"></i><%= flash.price %>€</li>
+        <li><i class="fa fa-arrows-alt"></i><%= flash.height %>cm x <%= flash.width %>cm</li>
+        <li><i class="fa fa-clock-o"></i><%= flash.duration %></li>
+      </ul>
+    </div>
+    <div class="flash-card-content-details-right">
+      <%= link_to '#', class:'btn btn-secondary' do %>
+        <i class="fa fa-shopping-cart"></i>
+      <% end %>
+    </div>
+    <% if flash.date < (Date.today - 7) %>
+      <div class="new-flash"><span>NOUVEAU</span></div>
+    <% end %>
   </div>
 </div>
