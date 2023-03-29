@@ -82,6 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_080327) do
     t.string "address"
     t.string "phone"
     t.string "email"
+    t.string "url"
     t.text "caption"
     t.string "facebook"
     t.string "instagram"

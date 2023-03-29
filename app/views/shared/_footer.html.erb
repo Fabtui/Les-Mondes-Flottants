@@ -3,7 +3,9 @@
   <div class="footer">
     <div class="footer-up-section">
       <div class="footer-left-element">
-        <a href="/"><%= image_tag("logo.png") %></a>
+        <% if shop.logo.attached? %>
+          <a href="/"><%= cl_image_tag shop.logo.key %></a>
+        <% end %>
         <p><%= shop.caption %></p>
       </div>
 
@@ -22,7 +24,7 @@
 
       <div class="footer-right-element">
         <div class="address-links">
-          <li class="address1"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.fr/maps/place/166+Rue+Vend%C3%B4me,+69003+Lyon/" target="_blank"> <%= shop.address %></a></li>
+          <li class="address1"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.fr/maps/place/<%= shop.address %>/" target="_blank"><%= shop.address %></a></li>
           <li><i class="fa fa-clock-o"></i></i> <%= shop.global_opening %></li>
           <li><a href="tel:<%= shop.phone %>"><i class="fa-solid fa-phone"></i> <%= shop.phone %></a></li>
           <li><a href="mailto:<%= shop.email %>"><i class="fa-solid fa-envelope"></i> <%= shop.email %></a></li>

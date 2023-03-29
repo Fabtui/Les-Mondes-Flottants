@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_create :send_welcome_mail
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -19,5 +20,9 @@ class User < ApplicationRecord
 
   def artist_appointments
     Appointment.where(artist_id: self.id).sort_by(&:date).select { |a| a.date > Date.yesterday }
+  end
+
+  def send_welcome_mail
+    UserMailer.welcome_user_email(self, Shop.first).deliver_now
   end
 end

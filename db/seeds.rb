@@ -3,6 +3,39 @@ require "open-uri"
 Appointment.destroy_all
 puts "Appointment cleaned"
 
+# --------------------------------SHOP------------------------------------
+
+Shop.destroy_all
+puts "Shop cleaned"
+
+shop = Shop.create(
+  name: 'Les Mondes Flottants',
+  address: '17 rue Blanqui, 42000 Saint-Etienne',
+  phone: '0477123456',
+  email: 'test@mail.com',
+  url: 'http://localhost:3000/',
+  facebook: '#',
+  instagram: '#',
+  twitter: '#',
+  caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusamus alias dolore consequatur architecto cumque deserunt quis vel?",
+  global_opening: 'Lundi au samedi, 9h-12h | 14h18h',
+  monday_opening: 'Fermé',
+  tuesday_opening: '9h-12h 14h18h',
+  wednesday_opening: '9h-12h 14h18h',
+  thursday_opening: '9h-12h 14h18h',
+  friday_opening: '9h-12h 14h-18h',
+  saturday_opening: '9h-12h 14h-18h',
+  sunday_opening: 'Fermé',
+)
+
+file = URI.open("app/assets/images/logo.png")
+shop.logo.attach(io: file, filename: "logo.png", content_type: "image/png")
+shop.save
+
+puts "#{Shop.count} shop created"
+
+
+
 # --------------------------------USER------------------------------------
 
 User.destroy_all
@@ -37,37 +70,6 @@ sami.photo1.attach(io: odahil_photo1, filename: "#{sami.name}-photo1.jpg", conte
 sami.save
 
 puts "#{User.count} user created"
-
-# --------------------------------SHOP------------------------------------
-
-Shop.destroy_all
-puts "Shop cleaned"
-
-shop = Shop.create(
-  name: 'Les Mondes Flottants',
-  address: '17 rue Blanqui, 42000 Saint-Etienne',
-  phone: '0477123456',
-  email: 'test@mail.com',
-  facebook: '#',
-  instagram: '#',
-  twitter: '#',
-  caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusamus alias dolore consequatur architecto cumque deserunt quis vel?",
-  global_opening: 'Lundi au samedi, 9h-12h | 14h18h',
-  monday_opening: 'Fermé',
-  tuesday_opening: '9h-12h 14h18h',
-  wednesday_opening: '9h-12h 14h18h',
-  thursday_opening: '9h-12h 14h18h',
-  friday_opening: '9h-12h 14h-18h',
-  saturday_opening: '9h-12h 14h-18h',
-  sunday_opening: 'Fermé',
-)
-
-file = URI.open("app/assets/images/logo.png")
-shop.logo.attach(io: file, filename: "logo.png", content_type: "image/png")
-shop.save
-
-puts "#{Shop.count} shop created"
-
 
 # --------------------------------TATTOO------------------------------------
 

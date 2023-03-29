@@ -5,20 +5,24 @@
   </head>
   <body style="background-color: black; color: white; font-family: Helvetica;">
     <div class="container" style="padding: 5vw;">
+      <% if @shop.logo.attached? %>
+        <%= cl_image_tag @shop.logo.key, :width => 80 %>
+      <% end %>
       <h1>Merci d'avoir pris rendez-vous avec <%= @appointment.artist.name.capitalize %>.</h1>
       <br>
       <p>Nous te confirmons ton rendez-vous du <%= I18n.localize(@appointment.date, format: :long) %> avec <%= @appointment.artist.name.capitalize %> à l'adresse suivante:</p>
       <br>
-      <p style="font-weight: 600;"><%= @shop.name %></p>
-      <p><%= @shop.address %></p>
+      <p style="font-weight: 600;"><a style="color: white; text-decoration: none;" href=<%= @shop.url %> target="_blank" rel="noopener noreferrer"><%= @shop.name %></a></p>
+      <p><a style="color: white" href="https://www.google.fr/maps/place/<%= @shop.address %>/" target="_blank"><%= @shop.address %></a></p>
       <br>
       <p>Pour toute modification ou annulation merci de nous contacter au <a style="color: white" href="tel:<%= @shop.phone %>"><%= @shop.phone %></a>.</p>
       <br>
       <a style="color: white" href=<%= @event_link %>>Ajouter ce rendez-vous à ton calendrier</a>
       <br>
-      <p>A très bientôt !</p>
       <br>
-      <p style="text-align: end;"><%= @shop.name %></p>
+      <p>A très bientôt!</p>
+      <br>
+      <p style="text-align: end;"><a style="color: white" href=<%= @shop.url %> target="_blank" rel="noopener noreferrer"><%= @shop.name %></a></p>
     </div>
   </body>
 </html>
