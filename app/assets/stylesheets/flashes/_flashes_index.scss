@@ -1,4 +1,32 @@
-.flash-container {
+.flash-home-container {
+  height: 100vh;
+  width: 100%;
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
+    url('background2.jpg');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 0 50px black;
+  a {
+    color: $white;
+  }
+}
+
+.flash-home-content {
+  width: 100%;
+  h1 {
+    margin: 0 auto;
+    font-weight: 300;
+    text-shadow: 0 0 4px black;
+  }
+}
+
+.flash-index-container {
   padding: 2vw;
   width: 100%;
   display: flex;
