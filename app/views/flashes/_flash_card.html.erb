@@ -21,7 +21,7 @@
         <i class="fa fa-shopping-cart"></i>
       <% end %>
     </div>
-    <% if flash.date < (Date.today - 7) %>
+    <% if flash.date > (Date.today - 7) %>
       <div class="new-flash"><span>NOUVEAU</span></div>
     <% end %>
   </div>

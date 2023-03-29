@@ -21,7 +21,7 @@
         <% if @artist.profile_pic.attached? %>
           <%= cl_image_tag @artist.profile_pic.key, class:"profile-picture align-left slide-in", id:"odahil-profile-pic"%>
         <% else %>
-          <%= image_tag "app/assets/images/profile_placeholder.jpg", class:"profile-picture align-left slide-in", id:"odahil-profile-pic"%>
+          <%= image_tag "profile_placeholder.jpg", class:"profile-picture align-left slide-in", id:"odahil-profile-pic"%>
         <% end %>
       </div>
 
@@ -38,6 +38,7 @@
     <% end %>
     <% unless @flashes.empty? %>
       <%= render 'artists/tattoos_carousel', tattoos: @flashes %>
+      <%= link_to 'Tout mes flashs', flashes_path(artist: @artist.id) %>
     <% end %>
     <%= render 'artists/appointment_form', artist: @artist, appointments: @appointments, appointment: @appointment %>
   </div>

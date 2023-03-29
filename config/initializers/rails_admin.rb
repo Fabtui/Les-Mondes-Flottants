@@ -42,17 +42,17 @@ RailsAdmin.config do |config|
     export
     bulk_delete
     show do
-      only ['User', 'Tattoo']
+      only ['User', 'Tattoo', 'Flash']
     end
     new do
-      only ['User', 'Tattoo']
+      only ['User', 'Tattoo', 'Flash']
     end
     show_in_app
     edit do
-      only ['Shop', 'User', 'Tattoo']
+      only ['Shop', 'User', 'Tattoo', 'Flash']
     end
     delete do
-      only ['Tattoo']
+      only ['Tattoo', 'Flash']
     end
     ## With an audit adapter, you can add:
     # history_index
