@@ -19,6 +19,9 @@
     <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'articles' && action_name == 'index' %>">
       <h5><%= link_to 'Boutique', '#' %></h5>
     </div>
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'flashes' && action_name == 'index' %>">
+      <h5><%= link_to 'Tattoo Flash', flashes_path %></h5>
+    </div>
     <% if user_signed_in? %>
     <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'contacts' && action_name == 'index' %>">
       <h5><%= link_to 'Messages', "#" %></h5>
@@ -27,9 +30,6 @@
       <h5><%= link_to 'Admin', '/admin' %></h5>
     </div>
     <% else %>
-      <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'contacts' && action_name == 'new' %>">
-        <h5><%= link_to 'Contact', "#" %></h5>
-      </div>
     <% end %>
     <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'cart' && action_name == 'index' %> cart_navbar_item">
       <h5>

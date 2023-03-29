@@ -148,8 +148,11 @@ puts "Flash cleaned"
   flash1 = Flash.new(
     name: "Flash #{i}",
     description: "#{i}",
-    client: "client #{i}",
     user_id: sami.id,
+    price: 199,
+    height: 20,
+    width: 10,
+    duration: "2h30",
     date: "2021-09-03T21:30",
   )
   flash1.photo.attach(io: File.open("app/assets/images/flashes/art#{i}.jpg"), filename: "flash#{i}.jpg", content_type:'image/jpg')
