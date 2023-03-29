@@ -11,15 +11,23 @@
       <h2>Prendre rendez-vous avec <%= artist.name %></h2>
       <i id="form-close-button" class="fa fa-times"></i>
     </div>
+    <div class="appoinment-form-content">
       <%= simple_form_for [artist, appointment] do |f| %>
-        <%= f.input :name, label: 'Nom' %>
-        <%= f.input :email, label: 'Email' %>
-        <%= f.input :phone, label: 'Téléphone' %>
-        <%= f.input :date, as: :string, label: 'Date et heure' %>
-        <%= f.input :comment, label: 'Message' %>
-        <%= f.input :category, collection: Appointment.categories, label: 'Type de rendez-vous' %>
+        <div class="appointment-form-inputs">
+          <div class="appointment-form-inputs-left">
+            <%= f.input :name, label: 'Nom' %>
+            <%= f.input :email, label: 'Email' %>
+            <%= f.input :phone, label: 'Téléphone' %>
+            <%= f.input :comment, label: 'Message' %>
+            <%= f.input :category, collection: Appointment.categories, label: 'Type de rendez-vous' %>
+          </div>
+          <div class="appointment-form-inputs-right">
+            <%= f.input :date, as: :string, label: 'Date et heure' %>
+          </div>
+        </div>
         <%= f.button :submit, "Enregistrer", class:'btn btn-secondary' %>
       <% end %>
+    </div>
     </div>
   </div>
 </div>

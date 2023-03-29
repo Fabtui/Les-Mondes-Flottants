@@ -11,6 +11,7 @@ export const artistAppointmentFlatpikr = () => {
     // const bookedDate = data.bookedDate.split('$')
     flatpickr("#appointment_date", {
       enableTime: true,
+      inline: true,
       dateFormat: "Y-m-d H:i",
       locale: French,
       // theme: "dark",
@@ -33,15 +34,18 @@ export const rdvButtonClick = () => {
 
   if (rdvButton) {
     const formDIv = document.querySelector(".appointment-shadow");
+    const shadowDIv = document.querySelector(".shadow");
 
     rdvButton.addEventListener('click', () => {
       formDIv.classList.toggle('hidden')
+      shadowDIv.classList.toggle("hidden");
     })
 
     const formCloseButton = document.querySelector('#form-close-button')
     formCloseButton.addEventListener("click", () => {
       console.log("click");
       formDIv.classList.toggle("hidden");
+      shadowDIv.classList.toggle("hidden");
       formDIv.classList.toggle("form-anim");
     });
   }
@@ -82,7 +86,9 @@ export const flatpickrDays = () => {
       const hours = document.querySelectorAll(".form-hours-container p");
       hours.forEach((hour) => {
         hour.addEventListener("click", () => {
-          console.log(hour.innerText);
+          console.log(hour)
+          hours.forEach(h => { h.classList.remove('active') });
+          hour.classList.add('active')
           const selectedhour = hour.innerText.split(':')
           const flatpikrHour = document.querySelector(".flatpickr-hour");
           const flatpikrMinute = document.querySelector(".flatpickr-minute");

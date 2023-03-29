@@ -14,6 +14,7 @@ class AppointmentsController < ApplicationController
     appointment.artist_id = params[:artist_id]
     appointment.user_id = current_user.id if current_user
     appointment.duration = 1
+    raise
     if appointment.save
       AppointmentMailer.appointment_confirmation_user_email(appointment, Shop.first).deliver_now
       AppointmentMailer.appointment_confirmation_shop_email(appointment, Shop.first).deliver_now
