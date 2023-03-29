@@ -1,0 +1,91 @@
+.flash-card {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 20px;
+  box-shadow: 4px 4px 10px black;
+}
+
+.flash-card-content {
+  width: 250px;
+  height: 250px;
+}
+
+.spinner-border {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+}
+
+.flash-card-image {
+  img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: 0.2s;
+  }
+
+  img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: none;
+  }
+}
+
+.flash-card-content-details {
+  background-color: $custom-hard-grey;
+  padding: 0.5rem;
+  ul {
+    padding: 0;
+  }
+  i {
+    margin-right: 8px;
+  }
+}
+
+.grey-filter {
+  transition: 0.2s;
+}
+
+.flash-card #lines {
+  border-radius: 4px;
+  pointer-events: none;
+  width: 230px;
+  height: 230px;
+  transform: translate(-10px, -10px);
+  border: 1px solid rgba(0, 0, 0, 0.295);
+  background: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 750px) {
+.flash-card {
+    margin: 20px;
+  }
+
+  .flash-card-content {
+    width: 130px;
+    height: 130px;
+  }
+
+  .flash-card-image {
+    img {
+      height: 130px;
+      width: 100%;
+    }
+  }
+
+  .flash-card-content-details {
+    font-size: 0.8rem;
+    ul {
+      margin-bottom: 4px;
+    }
+  }
+}

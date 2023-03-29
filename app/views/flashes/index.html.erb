@@ -1,0 +1,12 @@
+<div class="main-container">
+  <div class="secondary-container">
+    <div class="flash-container">
+      <% @flashes.each_with_index do |flash, index| %>
+        <% if flash.photo.attached? %>
+          <%= render 'flashes/flash_card', flash:flash, index:index %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render 'shared/preview_box' %>

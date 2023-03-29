@@ -69,7 +69,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_080327) do
   create_table "flashes", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "client"
+    t.integer "price"
+    t.integer "height"
+    t.integer "width"
+    t.string "duration"
     t.datetime "date"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

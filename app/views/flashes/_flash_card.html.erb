@@ -1,0 +1,18 @@
+<div class="flash-card" id=<%= flash.id %>>
+  <div class="spinner-border text-light" role="status">
+  </div>
+  <div class="flash-card-content">
+    <div class="flash-card-image lightbox-img lightbox-flash-img" data-class='Flash' data-id=<%= flash.id %> data-index=<%= index %>>
+      <%= cl_image_tag flash.photo.key, crop: :fill, id:"flash-list-picture" %>
+      <span id="lines"></span>
+    </div>
+  </div>
+  <div class="flash-card-content-details">
+    <p>Par: <%= flash.user.name %></p>
+    <ul>
+      <li><i class="fa fa-money"></i><%= flash.price %>€</li>
+      <li><i class="fa fa-arrows-alt"></i><%= flash.height %>cm x <%= flash.width %>cm</li>
+      <li><i class="fa fa-clock-o"></i><%= flash.duration %></li>
+    </ul>
+  </div>
+</div>
