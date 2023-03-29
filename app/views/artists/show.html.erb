@@ -38,7 +38,7 @@
     <% end %>
     <% unless @flashes.empty? %>
       <%= render 'artists/tattoos_carousel', tattoos: @flashes %>
-      <%= link_to 'Tout mes flashs', flashes_path(artist: @artist.id), class:'btn btn-secondary' %>
+      <%= link_to 'Tout mes flashs', flashes_path(artist: @artist.id, anchor:'main-container'), class:'btn btn-secondary' %>
     <% end %>
     <%= render 'artists/appointment_form', artist: @artist, appointments: @appointments, appointment: @appointment %>
   </div>
