@@ -5,6 +5,7 @@ class CreateShops < ActiveRecord::Migration[7.0]
       t.string :address
       t.string :phone
       t.string :email
+      t.string :url
       t.text :caption
       t.string :facebook
       t.string :instagram

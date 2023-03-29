@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body style="background-color: black; color: white; font-family: Helvetica;">
+    <div class="container" style="padding: 5vw;">
+      <% if @shop.logo.attached? %>
+        <%= cl_image_tag @shop.logo.key, :width => 80 %>
+      <% end %>
+      <h1>Bienvenue sur notre site, <%= @user.name.capitalize %>!</h1>
+      <p>Merci de t'être inscrit.</p>
+      <br>
+      <p>A très bientôt.</p>
+      <br>
+      <br>
+      <p style="text-align: end;"><a style="color: white" href=<%= @shop.url %> target="_blank" rel="noopener noreferrer"><%= @shop.name %></a></p>
+      <p style="text-align: end;"><a style="color: white" href="https://www.google.fr/maps/place/<%= @shop.address %>/" target="_blank"><%= @shop.address %></a></p>
+      <p style="text-align: end;"><%= @shop.global_opening %></p>
+      <p style="text-align: end;"><a style="color: white" href="tel:<%= @shop.phone %>"><%= @shop.phone %></a></p>
+    </div>
+  </body>
+</html>
