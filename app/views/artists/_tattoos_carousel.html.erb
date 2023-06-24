@@ -1,20 +1,23 @@
-
-<% if tattoos.first.instance_of?(Flash) %>
-  <h3>Mes flashs tattoos:</h3>
-<% end %>
-<div class="tattoo-card-container">
-  <div class="swiper swiper-tattoo-cards">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <% tattoos.each_with_index do |tattoo, index| %>
-          <% if tattoo.photo.key %>
-            <%= render 'artists/tattoo_cards', tattoo:tattoo, index:index %>
+<div class="artist-carousel-container">
+  <% if tattoos.first.instance_of?(Flash) %>
+    <h3>Flashs tattoos:</h3>
+  <% else %>
+    <h3>Gallerie:</h3>
+  <% end %>
+  <div class="tattoo-card-container">
+    <div class="swiper swiper-tattoo-cards">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <% tattoos.each_with_index do |tattoo, index| %>
+            <% if tattoo.photo.key %>
+              <%= render 'artists/tattoo_cards', tattoo:tattoo, index:index %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
+  </div>
 </div>

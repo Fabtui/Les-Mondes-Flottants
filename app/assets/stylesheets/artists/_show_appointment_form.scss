@@ -57,8 +57,10 @@
   flex-wrap: wrap;
   flex-direction: column;
   max-height: 200px;
+  border-top: 1px solid $custom-hard-grey;
   p {
-    color: $black;
+    color: #393939;
+    font-weight: 400;
     transition: .2s;
     margin: 0.5rem 0;
     &:hover {

@@ -75,18 +75,22 @@ export const flatpickrDays = () => {
       // create container for avaible hours if not already created
       const hoursContainer = document.querySelector(".form-hours-container");
       if (hoursContainer) {
-        hoursContainer.innerHTML = `${availableHours.map((hour) => `<p>${hour}</p>`).join('')}`;
+        hoursContainer.innerHTML = availableHours.count == 0
+            ? `<p>Pas de disponibilité pour cette date</p>`
+            : `${availableHours.map((hour) => `<p>${hour}</p>`).join("")}`;
       } else {
         const hoursContainer = document.createElement("div");
         hoursContainer.classList.add("form-hours-container");
         flatpickrCalendar.appendChild(hoursContainer)
-        hoursContainer.innerHTML = `${availableHours.map((hour) => `<p>${hour}</p>`).join('')}`;
+        hoursContainer.innerHTML =
+          availableHours.count == 0
+            ? `<p>Pas de disponibilité pour cette date</p>`
+            : `${availableHours.map((hour) => `<p>${hour}</p>`).join("")}`;
       }
 
       const hours = document.querySelectorAll(".form-hours-container p");
       hours.forEach((hour) => {
         hour.addEventListener("click", () => {
-          console.log(hour)
           hours.forEach(h => { h.classList.remove('active') });
           hour.classList.add('active')
           const selectedhour = hour.innerText.split(':')
