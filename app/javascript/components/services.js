@@ -5,8 +5,8 @@ export const foundAvailableHours = (startTime, endTime, bookedHours) => {
 
   let hours = [];
   for (let i = start; i < end; i++) {
-    hours.push(`${i}:00`);
-    hours.push(`${i}:30`);
+    hours.push(`${i}h00`);
+    hours.push(`${i}h30`);
   }
   hours.push(endTime);
 
